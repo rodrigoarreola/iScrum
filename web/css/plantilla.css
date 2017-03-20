@@ -2,7 +2,13 @@
 
 body {
 	margin:0 0 0 0;
+	
 }
+tbody{
+	background: #456;
+}
+
+
 table.marco {
 	border-collapse:collapse;
 	background-color: #FFFFFF;

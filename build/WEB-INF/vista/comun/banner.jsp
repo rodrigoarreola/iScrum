@@ -1,5 +1,5 @@
 
-    <!-- IS: Encabezado de Pagina (Banner) -->
+    <!-- IS: Encabezado de Pagina (Banner) 
 
     <nav>
         <div class="row nav-header">
@@ -7,12 +7,12 @@
                 <a href="#" ><img class="logo-ppty" src="images/logo-upch.png"></a>
             </div>
             <div class="col-xs-8 end-xs">
-                <h1 class="oswald">Administrador de Roles UPCHIPAS</h1>
+                <h1 class="oswald">iScrum</h1>
             </div>
             <div class="col-xs-12 center-xs">
-                <h3>Sistema para administrar los roles de la Universidad Politécnica de Chiapas</h3>
+                <h3>Sistema Administrador de Tareas</h3>
             </div>
         </div>
     </nav>
     
-    <!-- FS: Encabezado de Pagina (Banner) -->
+    

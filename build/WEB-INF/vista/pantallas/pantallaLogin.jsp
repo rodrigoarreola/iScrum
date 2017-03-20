@@ -2,6 +2,7 @@
     <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
     <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
     
+    
     <br>
     <font size='5'><fmt:message key="formaLogin.titulo" /></font>
 

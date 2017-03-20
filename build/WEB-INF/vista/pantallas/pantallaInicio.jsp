@@ -11,20 +11,9 @@
 	
     <body>
         <table class="marco" cellpadding="0">
-            <tr>
-                <td colspan="2">
-                    <c:import url="/WEB-INF/vista/comun/banner.jsp" />
-                    <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
-                </td>
-            </tr>
             <tr height="590px">
                 <td align="center" valign="center" width="100%">
                     <h3>Welcome </h3>
-                </td>
-            </tr>
-            <tr>
-                <td colspan="2">
-                    <c:import url="/WEB-INF/vista/comun/barraPie.jsp" />
                 </td>
             </tr>
         </table>

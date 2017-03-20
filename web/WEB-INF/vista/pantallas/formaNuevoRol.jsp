@@ -4,9 +4,10 @@
 
 
     <br>
-    <font size='5'><fmt:message key="formaNuevoRol.titulo" /></font>
+    
+    <h2>Nuevo Usuario</h2>
 
-    <form id="forma" action="procesarRegistroRol.do" method="post">
+    <form id="forma" action="procesarRegistroRol.do" method="post"> 
         <table>
             <tr>
                 <td colspan="2">
@@ -15,7 +16,7 @@
             </tr>
             <tr>
                 <td align="right">
-                    <fmt:message key="formaNuevoRol.etiqueta.nombre" />
+                    Nombre
                 </td>
                 <td align="left">
                     <input type="text" 
@@ -25,9 +26,10 @@
                            value="${formaNuevoRol.nombre}" />
                 </td>
             </tr>
+            <br>
             <tr>
                 <td align="right">
-                    <fmt:message key="formaNuevoRol.etiqueta.descripcion" />
+                    Descripcion
                 </td>
                 <td align="left">
                     <input type="text" 
@@ -37,6 +39,7 @@
                            value="${formaNuevoRol.descripcion}" />
                 </td>
             </tr>
+            <br>
             <tr>
                 <td colspan="2" align="center">
                     <input type="submit" 
@@ -52,7 +55,9 @@
                     <input type="submit" 
                            name="org.apache.struts.taglib.html.CANCEL" 
                            value="cancelar" 
-                           onclick="bCancel=true;">    
+                           onclick="bCancel=true;">   
+                           
+
                 </td>
             </tr>
         </table>

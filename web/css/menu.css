@@ -17,8 +17,8 @@ div.clsMenu {
 	background-color:#6699CC; 
 	position:absolute; 
 	visibility:hidden; 
-	width:130px; 
-	padding:5px 5px 5px 8px; 
+	width:100px; 
+	padding:3px 3px 3px 6px; 
 	border-top:1px white solid; 
 }
 div.clsMenu a { 
