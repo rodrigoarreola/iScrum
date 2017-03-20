@@ -24,7 +24,7 @@
     <table cellpadding="0" cellspacing="0" width="60%" border="0" class="container">
         <thead>
             <tr>
-                <th><h1>Rol</h1></th>
+                <th><h1>Nombre</h1></th>
                 <th><h1>Descripcion</h1></th>
                 <th><h1>Modificar</h1></th>
                 <th><h1>Eliminar</h1></th>

@@ -101,6 +101,7 @@
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLoginScrum.jsp"/>
             
         </action>
+
         <action path="/irInicio"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaInicio.jsp" />
         <action path="/irBienvenida"
@@ -113,7 +114,7 @@
 
                         <action path="/solicitarBacklog"
                                 forward="/WEB-INF/vista/pantallas/backlog.jsp" />
-
+                   
         <action path="/solicitarRegistro"
                 type="edu.uag.iidis.scec.control.MCURegistrarUsuario"
                 parameter="solicitarRegistro"
