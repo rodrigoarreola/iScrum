@@ -95,11 +95,11 @@
             type="edu.uag.iidis.scec.control.MCULogin"
             parameter="solicitarLogin"
             name="formaLogin"
-            scope="request"            
+            scope="request"
             validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaInicio.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLoginScrum.jsp"/>
-            
+
         </action>
 
         <action path="/irInicio"
@@ -108,13 +108,15 @@
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaBienvenida.jsp" />
         <action path="/irAyuda"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaAyuda.jsp" />
+        <action path="/irDashboard"
+                forward="/WEB-INF/vista/pantallas/irDashboard.jsp" />
 
         <action path="/irBacklog"
                 forward="/WEB-INF/vista/pantallas/pantallaBacklog.jsp" />
 
                         <action path="/solicitarBacklog"
                                 forward="/WEB-INF/vista/pantallas/backlog.jsp" />
-                   
+
         <action path="/solicitarRegistro"
                 type="edu.uag.iidis.scec.control.MCURegistrarUsuario"
                 parameter="solicitarRegistro"

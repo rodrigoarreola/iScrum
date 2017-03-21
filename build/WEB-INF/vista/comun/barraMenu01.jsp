@@ -14,8 +14,8 @@
             <br><p>Roles</p>
         </div>
         <div class="col-xs-1 box-icon">
-            <a href="solicitarListarPaises.do"><i class="fa fa-globe" aria-hidden="true"></i></a>
-            <br><p>Paises</p>
+            <a href="irDashboard.do"><i class="fa fa-columns" aria-hidden="true"></i></a>
+            <br><p>Dashboard</p>
         </div>
         <div class="col-xs-1 box-icon">
             <a href="solicitarListarLugares.do"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
