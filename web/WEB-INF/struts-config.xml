@@ -109,7 +109,7 @@
         <action path="/irAyuda"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaAyuda.jsp" />
         <action path="/irDashboard"
-                forward="/WEB-INF/vista/pantallas/irDashboard.jsp" />
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=irDashboard.jsp" />
 
         <action path="/irBacklog"
                 forward="/WEB-INF/vista/pantallas/pantallaBacklog.jsp" />

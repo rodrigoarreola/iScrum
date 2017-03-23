@@ -6,18 +6,18 @@
             <p>Inicio</p>
         </div>
         <div class="col-xs-1 box-icon">
-            <a href="irAyuda.do"><i class="fa fa-question-circle" aria-hidden="true"></i></a>
-            <br><p>Ayuda</p>
+            <a href="irAyuda.do"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+            <br><p>Equipo</p>
         </div>
         <div class="col-xs-1 box-icon">
             <a href="solicitarListarRoles.do"><i class="fa fa-users" aria-hidden="true"></i></a>
-            <br><p>Roles</p>
+            <br><p>Usuarios</p>
         </div>
         <div class="col-xs-1 box-icon">
             <a href="irDashboard.do"><i class="fa fa-columns" aria-hidden="true"></i></a>
             <br><p>Dashboard</p>
         </div>
-        <div class="col-xs-1 box-icon">
+        <%-- <div class="col-xs-1 box-icon">
             <a href="solicitarListarLugares.do"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
             <br><p>Lugares</p>
         </div>
@@ -28,7 +28,7 @@
         <div class="col-xs-1 box-icon">
             <a href="solicitarListarRecomendaciones.do"><i class="fa fa-info-circle" aria-hidden="true"></i></a>
             <br><p>Recomendaciones</p>
-        </div>
+        </div> --%>
     </div>
 
     <%-- <table class="barraMenu">

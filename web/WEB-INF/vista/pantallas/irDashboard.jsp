@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="utf-8">
@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="css/dashboard.css">
     </head>
     <body>
-        <c:import url="/WEB-INF/vista/comun/barraMenu01.jsp" />
+        
         <h1>Dashboard</h1>
 
         <div class="list-container">
