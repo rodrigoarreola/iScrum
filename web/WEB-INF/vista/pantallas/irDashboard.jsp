@@ -13,14 +13,19 @@
 
         <div class="list-container">
             <div class="list list-dimension">
-                <h1 class="list-header" contenteditable>Product Backlog</h1>
+                <input type="text" class="element" value="Product Backlog">
                 <ul class="list-inner-scroll">
-                    <li class="list-item" contenteditable>Hacer modluos</li>
-                    <li class="list-item" contenteditable>Implementar login</li>
+                    <div class="input-group">
+                        <input type="text" class="form-control"  aria-label="" placeholder="Hola">
+                        <span class="input-group-addon glyphicon glyphicon-remove"></span>
+                    </div>
+
                 </ul>
-                <button class="add-card-button">Añadir tarjeta</button>
+                <button class="add-card-button btn btn-success">Agregar tarjeta</button>
+                <button class="delete-card-button btn btn-danger">Borrar lista</button>
             </div>
-            <button class="add-list-button list-dimension">Crear lista</button>
+            <button class="add-list-button list-dimension btn btn-success">Crear lista</button>
+            <%-- <button type="button" class="btn btn-success">Crear lista</button> --%>
         </div>
         <div class="row center-xs">
             <button type="button" class="btn btn-primary btn-lg">Guardar cambios</button>
