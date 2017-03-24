@@ -1,13 +1,19 @@
 var newList = `
 <div class="list list-dimension">
-    <h1 class="list-header" contenteditable>New list</h1>
+    <input type="text" class="element" value="New list">
     <ul class="list-inner-scroll">
     </ul>
-    <button class="add-card-button">Add a card...</button>
+    <button class="add-card-button btn btn-success">Agregar tarjeta</button>
+    <button class="delete-card-button btn btn-danger">Borrar lista</button>
   </div>
 `;
 
-var newCard = `<li class="list-item" contenteditable></li>`
+// var newCard = `<input type="text" class="element-item">`
+    var newCard = `
+    <div class="input-group">
+        <input type="text" class="form-control"  aria-label="" placeholder="Escribe...">
+        <span class="input-group-addon glyphicon glyphicon-remove"></span>
+    </div>`
 
 $('.add-list-button').click(function(e) {
   var $newList = $(newList);
@@ -19,6 +25,24 @@ $('.list-container').on('click', '.add-card-button', function(e) {
   var $list = $target.parent('.list');
   addCardToList($list);
 });
+
+$('.list-container').on('click', '.delete-card-button', function(e) {
+  this.fadeOut( "slow", function() {
+    // Animation complete.
+  });
+});
+
+$('.list-container').on('click', '.glyphicon-remove', function(e) {
+    $(".input-group").fadeOut( "slow", function() {
+        //do nothing
+    });
+});
+
+// $( ".list" ).click(function() {
+//   $( this."input-group" ).fadeOut( "slow", function() {
+//     alert("hey!");
+//   });
+// });
 
 function addCardToList($list) {
   var $newCard = $(newCard);
