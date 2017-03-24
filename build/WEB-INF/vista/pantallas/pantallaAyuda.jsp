@@ -1,63 +1,67 @@
-<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
-<html lang="en">
-    <head>
-        <title></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-       
-        <script src="ScriptUsers.js"></script>
-    </head>
-    <body>
-        <h1>Scrum Team</h1>
-
-        <table id="tabla" class="container">
-    <thead>
-        <tr>
-            <th><h1>User</h1></th>
-            <th><h1>Rol</h1></th>
-        </tr>
-    </thead>
-    <tbody>
-    </tbody>
-    </table>
-    <br>
-    
-        Correo:<br>
-             <input id= "email" type="email">
-        <br>
-        Rol:<br>
-        <input type="radio" name="rol" value="ScrumMaster">ScrumMaster<br>
-        <input type="radio" name="rol" value="ScrumTeam">ScrumTeam<br>
-        <br>
-        <input type="submit" class="button button2" onclick="addUser()" value="Agregar">
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+    <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
+    <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
+<style>
+  .HipervinculoAdmon{
+    color:#000000;
+    text-decoration:none;
+  }
   
-        
-    </body>
+  .HipervinculoAdmon:hover{
+    color:#006666;
+    text-decoration:underline;
+  }
+</style>
+<script language="javascript" type="text/javascript">
 
-    <script type="text/javascript">
-    function addUser() {
-    var table = document.getElementById("tabla");
-    var row = table.insertRow(1);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var email=document.getElementById("email").value;
-    var porNombre=document.getElementsByName("rol");
-    var resultado="ninguno";
-    for(var i=0;i<porNombre.length;i++)
-        {
-            if(porNombre[i].checked)
-                resultado=porNombre[i].value;
-        }
+  function EliminarRol(strRolName){
+    return confirm("�Desea eliminar el rol '" + strRolName + "'?")
+  }
 
-
-
-    cell1.innerHTML = email;
-    cell2.innerHTML = resultado;
-    
-}
 </script>
+    <br>
 
-</html>
+    <table cellpadding="0" cellspacing="0" width="60%" border="0" class="container">
+        <thead>
+            <tr>
+                <th><h1>Nombre</h1></th>
+                <th><h1>Descripcion</h1></th>
+                <th><h1>Modificar</h1></th>
+                <th><h1>Eliminar</h1></th>
+            </tr>
+        </thead>
+
+        <tbody>
+        <c:forEach var="rol" items="${formaListadoRoles.roles}">
+            <tr>
+                <td align="left" width="20%"><c:out value="${rol.nombre}"/></td>
+                <td align="left" width="40%"><c:out value="${rol.descripcion}"/></td>
+                <td align="left" width="20%">
+                    <a href='solicitarModificarRol.do?id=<c:out value="${rol.id}"/>'
+                       class="HipervinculoAdmon">
+                        <fmt:message key="formaListadoRoles.etiqueta.modificar" />
+                    </a>
+                </td>
+                <td>
+                    <a href='procesarEliminarRol.do?id=<c:out value="${rol.id}"/>'
+                       onClick="javascript: return EliminarRol('<c:out value="${rol.nombre}"/>')"
+                       class="HipervinculoAdmon">
+                        <fmt:message key="formaListadoRoles.etiqueta.eliminar" />
+                    </a>
+                </td>
+            </tr>
+        </c:forEach>
+        <tr>
+            <td colspan="4" align="left" style="padding-top:25px;"><b>Total:</b> ${formaListadoRoles.contador}</td>
+        </tr>
+                
+        <tr>
+            <td colspan="4" style="padding-top:25px; padding-bottom:25px;">
+                <a href="solicitarRegistroRol.do" class="HipervinculoAdmon">Agregar nuevo rol...</a>
+            </td>
+        </tr>
+        </tbody>
+
+
+        
+    </table>
