@@ -21,13 +21,13 @@
 </script>
     <br>
 
-    <table cellpadding="0" cellspacing="0" width="60%" border="0" class="container">
+    <table cellpadding="0" cellspacing="0" width="60%" border="0" class="highlight">
         <thead>
             <tr>
-                <th><h1>Nombre</h1></th>
-                <th><h1>Descripcion</h1></th>
-                <th><h1>Modificar</h1></th>
-                <th><h1>Eliminar</h1></th>
+                <th><h5>Nombre</h5></th>
+                <th><h5>Rol</h5></th>
+                <th><h5>Modificar</h5></th>
+                <th><h5>Eliminar</h5></th>
             </tr>
 	    </thead>
 
@@ -58,6 +58,7 @@
         <tr>
             <td colspan="4" style="padding-top:25px; padding-bottom:25px;">
                 <a href="solicitarRegistroRol.do" class="HipervinculoAdmon">Agregar nuevo rol...</a>
+                <a href="solicitarRegistro.do" class="HipervinculoAdmon">Agregar nuevo usuario...</a>
             </td>
         </tr>
 	    </tbody>

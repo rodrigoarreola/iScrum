@@ -2,6 +2,7 @@
 
 body {
   background: #456;
+  font-style: black;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -89,7 +90,7 @@ body {
 .login input[type="password"] {
   background: #fff;
   border-color: #bbb;
-  color: #555;
+  color: black;
 }
 
 /* Text fields' focus effect */

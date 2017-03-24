@@ -4,7 +4,8 @@
 
 
     <br>
-    <font size='5'><fmt:message key="formaNuevaPersona.titulo" /></font>
+    
+    <h5>Nuevo Rol</h5>
 
     <form id="forma" action="procesarRegistro.do" method="post">
         <table>
@@ -60,23 +61,7 @@
                            maxlength="100" 
                            value="${formaNuevaPersona.apellidoMaterno}" />
                 </td>
-            </tr>
-      <!---    /cidades --->      
-            <tr>
-                <td align="right">
-                    <fmt:message key="formaNuevaPersona.etiqueta.ciudades" />
-                </td>
-                <td align="left">
-       				<select name="ciudad">
-                        <c:forEach var="rol" items="${formaNuevaPersona.ciudades}">
-    		            <option value="${rol.nombre}">"${rol.descripcion}"</option>
-            			</c:forEach>
-                     </select>
-                </td>
-            </tr>
-            
-            
-            
+            </tr>            
             
             <tr>
                 <td align="right">

@@ -39,12 +39,13 @@
             </tr>
             
             <tr>
-                <td colspan="2" align="center">
+                <td colspan="2" >
                     <input type="submit" 
                            name="submit"
                            value="Login"/>
                      
                 </td>
             </tr>
+            
         </table>
     </form>

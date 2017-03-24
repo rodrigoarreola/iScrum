@@ -52,19 +52,20 @@ public final class MCURegistrarRol
             log.debug(">procesarRegistroRol");
         }
 
-        // Verifica si la acción fue cancelada por el usuario
+        // Verifica si la acciï¿½n fue cancelada por el usuario
         if (isCancelled(request)) {
             if (log.isDebugEnabled()) {
-                log.debug("<La acción fue cancelada");
+                log.debug("<La acciï¿½n fue cancelada");
             }
             return (mapping.findForward("cancelar"));
         }
 
         
         // Se obtienen los datos para procesar el registro
+        //
         FormaNuevoRol forma = (FormaNuevoRol)form;
 
-        Rol rol = new Rol(forma.getNombre(),
+        Rol rol = new Rol(forma.getNombre(), //get + name del input 
                           forma.getDescripcion());
 
         ManejadorRoles mr = new ManejadorRoles();
@@ -83,14 +84,14 @@ public final class MCURegistrarRol
                 return (mapping.getInputForward());
 
             case 3:
-                log.error("Ocurrió un error de infraestructura");
+                log.error("Ocurriï¿½ un error de infraestructura");
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
                             new ActionMessage("errors.infraestructura"));                
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
 
             default:
-                log.warn("ManejadorUsuario.crearUsuario regresó reultado inesperado");
+                log.warn("ManejadorUsuario.crearUsuario regresï¿½ reultado inesperado");
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
                             new ActionMessage("errors.infraestructura"));                
                 saveErrors(request, errores);
