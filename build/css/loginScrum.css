@@ -2,6 +2,7 @@
 
 body {
   background: #456;
+  background-image: url(background.jpg);
   font-style: black;
   font-family: 'Open Sans', sans-serif;
 }

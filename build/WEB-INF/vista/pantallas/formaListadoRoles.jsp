@@ -26,6 +26,7 @@
             <tr>
                 <th><h5>Nombre</h5></th>
                 <th><h5>Rol</h5></th>
+                <th><h5>Id</h5></th>
                 <th><h5>Modificar</h5></th>
                 <th><h5>Eliminar</h5></th>
             </tr>
@@ -36,6 +37,7 @@
             <tr>
                 <td align="left" width="20%"><c:out value="${rol.nombre}"/></td>
                 <td align="left" width="40%"><c:out value="${rol.descripcion}"/></td>
+                <td align="left" width="40%"><c:out value="${rol.id}"/></td>
                 <td align="left" width="20%">
                     <a href='solicitarModificarRol.do?id=<c:out value="${rol.id}"/>'
 					   class="HipervinculoAdmon">

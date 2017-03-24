@@ -8,7 +8,7 @@ import java.util.*;
  * Esta clase es usada para representar un rol de un
  * usuario. 
  *
- * <p><a href="Rol.java.html"><i>Ver código fuente</i></a></p>
+ * <p><a href="Rol.java.html"><i>Ver cï¿½digo fuente</i></a></p>
  *
  * @author <a href="mailto:vramos@uag.mx">Victor Ramos</a>
  * @version 1.0
@@ -68,7 +68,7 @@ public class Rol extends ClaseBase
 
     
     /**
-     * Regresa la descripción del rol.
+     * Regresa la descripciï¿½n del rol.
      * @return String
      */
     public String getDescripcion() {
@@ -76,7 +76,7 @@ public class Rol extends ClaseBase
     }
 
     /**
-     * Establece la descripción del rol.
+     * Establece la descripciï¿½n del rol.
      * @return void
      */
     public void setDescripcion(String descripcion) {

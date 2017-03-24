@@ -37,10 +37,10 @@ public final class MCUListarRoles
             log.debug(">solicitarListarRoles");
         }
 
-        // Verifica si la acción fue cancelada por el usuario
+        // Verifica si la acciï¿½n fue cancelada por el usuario
         if (isCancelled(request)) {
             if (log.isDebugEnabled()) {
-                log.debug("<La acción fue cancelada");
+                log.debug("<La acciï¿½n fue cancelada");
             }
             return (mapping.findForward("cancelar"));
         }
@@ -61,7 +61,7 @@ public final class MCUListarRoles
             }
             return (mapping.findForward("exito"));
         } else {
-            log.error("Ocurrió un error de infraestructura");
+            log.error("Ocurriï¿½ un error de infraestructura");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
                         new ActionMessage("errors.infraestructura"));                
             saveErrors(request, errores);

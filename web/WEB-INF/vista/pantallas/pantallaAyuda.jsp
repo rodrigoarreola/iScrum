@@ -24,15 +24,15 @@
     <table cellpadding="0" cellspacing="0" width="60%" border="0" class="container">
         <thead>
             <tr>
-                <th><h1>Nombre</h1></th>
-                <th><h1>Descripcion</h1></th>
-                <th><h1>Modificar</h1></th>
-                <th><h1>Eliminar</h1></th>
+                <th><h5>Nombre</h5></th>
+                <th><h5>Descripcion</h5></th>
+                <th><h5>Modificar</h5></th>
+                <th><h5>Eliminar</h5></th>
             </tr>
         </thead>
 
         <tbody>
-        <c:forEach var="rol" items="${pantallaAyuda.roles}">
+        <c:forEach var="rol" items="${formaListadoRoles.roles}">
             <tr>
                 <td align="left" width="20%"><c:out value="${rol.nombre}"/></td>
                 <td align="left" width="40%"><c:out value="${rol.descripcion}"/></td>
