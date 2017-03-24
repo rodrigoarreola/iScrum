@@ -34,15 +34,15 @@ $('.list-container').on('click', '.delete-card-button', function(e) {
 
 $('.list-container').on('click', '.glyphicon-remove', function(e) {
     $(".input-group").fadeOut( "slow", function() {
-      alert("hey!");
+        //do nothing
     });
 });
 
-$( ".list" ).click(function() {
-  $( "input-group" ).fadeOut( "slow", function() {
-    alert("hey!");
-  });
-});
+// $( ".list" ).click(function() {
+//   $( this."input-group" ).fadeOut( "slow", function() {
+//     alert("hey!");
+//   });
+// });
 
 function addCardToList($list) {
   var $newCard = $(newCard);

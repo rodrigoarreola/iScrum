@@ -66,6 +66,7 @@
     </script>
 
     <form id="forma" action="procesarRegistroRol.do" method="post"> 
+        <!-- el action va MCURegistrar rol -->
         <table>
             <tr>
                 <td colspan="2">
@@ -76,10 +77,12 @@
                 <td align="right">
                     Nombre
                 </td>
+                <!-- el name es el valor que se pasa al MCURegistrarRol
+                todo tiene que estar en forms -->
                 <td align="left">
                     <input type="text" 
                            id="nombre"
-                           name="nombre" 
+                           name="nombre"
                            size="50" 
                            maxlength="100" 
                            value="${formaNuevoRol.nombre}" />

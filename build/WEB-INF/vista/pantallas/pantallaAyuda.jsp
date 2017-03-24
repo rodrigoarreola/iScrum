@@ -32,7 +32,7 @@
         </thead>
 
         <tbody>
-        <c:forEach var="rol" items="${formaListadoRoles.roles}">
+        <c:forEach var="rol" items="${pantallaAyuda.roles}">
             <tr>
                 <td align="left" width="20%"><c:out value="${rol.nombre}"/></td>
                 <td align="left" width="40%"><c:out value="${rol.descripcion}"/></td>
