@@ -25,13 +25,24 @@ public final class MCULogin
 
     private Log log = LogFactory.getLog(MCULogin.class);
 
+    public ActionForward killSession(ActionMapping mapping,
+                ActionForm form,
+                HttpServletRequest request,
+                HttpServletResponse response)throws Exception {
+
+        
+        request.getSession().invalidate();
+
+        return (mapping.findForward("exito"));
+           
+    }
 
     public ActionForward solicitarLogin(
                 ActionMapping mapping,
                 ActionForm form,
                 HttpServletRequest request,
                 HttpServletResponse response)
-            throws Exception {
+            throws Exception {  
 		ActionMessages errores = new ActionMessages();
 		//String username = loginForm.getUsername();
         if (log.isDebugEnabled()) {
@@ -53,6 +64,7 @@ public final class MCULogin
             }
             user = new User(forma.getUser(), forma.getPassword());
             request.getSession().setAttribute("user", user);
+            request.getSession().setAttribute("user1", forma.getUser());
             return (mapping.findForward("exito"));
         } else {
             log.error("El usuario no existe");

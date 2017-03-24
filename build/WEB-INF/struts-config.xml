@@ -56,6 +56,7 @@
          <form-bean name="formaLogin"
                    type="edu.uag.iidis.scec.vista.FormaLogin">
         </form-bean>
+
         <form-bean name="formaEliminarRecomendacion"
                    type="edu.uag.iidis.scec.vista.FormaEliminarRecomendacion">
         </form-bean>
@@ -87,6 +88,15 @@
 
     <!-- Definici�n de acciones -->
     <action-mappings>
+        <action path= "/cerrarSession"
+                type="edu.uag.iidis.scec.control.MCULogin"
+                parameter= "killSession"
+                scope="request"
+                validate="false">
+                <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLoginScrum.jsp"/>
+                <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaInicio.jsp"/>
+                
+        </action>       
         <action path="/irLogin"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLoginScrum.jsp" />
         <action path="/solicitarBacklog"
