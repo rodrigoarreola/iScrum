@@ -282,9 +282,10 @@
                 validate="true"
                 input="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaNuevoRol.jsp" >
             <forward name="cancelar" path="/solicitarListarRoles.do" redirect="true"/>
-            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaBienvenida.jsp"/>
+            <forward name="exito" path="/solicitarListarRoles.do" redirect="true" />
             <forward name="volver" path="solicitarRegistroRol.do" redirect="true"/>
        </action>
+       
        <action path="/procesarRegistroEstado"
                 type="edu.uag.iidis.scec.control.MCURegistrarEstado"
                 parameter="procesarRegistroEstado"

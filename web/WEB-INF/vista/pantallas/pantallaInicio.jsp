@@ -10,18 +10,9 @@
     </head>
 
     <body>
-        <table class="marco" cellpadding="0">
-            <tr height="590px">
-                <td align="center" valign="center" width="100%">
-                    <h3>Welcome <%= nombre %> </h3>
-
-                    <form class="login-container" id="forma" action="procesarLogin.dd"  method="post">
-                        <button type="submit" class="btnIn button" value="Login">Cerrar sesion</button>
-                    </form>
-                 
-
-                </td>
-            </tr>
-        </table>
+        <h5 >Welcome <%= nombre %> </h5>
+        <form class="login-container" id="forma" action="procesarLogin.dd"  method="post">
+            <button type="submit" class="btnIn button" value="Login">Cerrar sesion</button>
+        </form>
     </body>
 </html>

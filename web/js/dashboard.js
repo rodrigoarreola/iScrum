@@ -8,6 +8,7 @@ var newList = `
   </div>
 `;
 
+// var newCard = `<input type="text" class="element-item">`
     var newCard = `
     <div class="input-group">
         <input type="text" class="form-control"  aria-label="" placeholder="Escribe...">
@@ -37,7 +38,11 @@ $('.list-container').on('click', '.glyphicon-remove', function(e) {
     });
 });
 
-
+// $( ".list" ).click(function() {
+//   $( this."input-group" ).fadeOut( "slow", function() {
+//     alert("hey!");
+//   });
+// });
 
 function addCardToList($list) {
   var $newCard = $(newCard);

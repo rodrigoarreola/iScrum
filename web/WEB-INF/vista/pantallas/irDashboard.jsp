@@ -31,29 +31,6 @@
             <button type="button" class="btn btn-primary btn-lg">Guardar cambios</button>
         </div>
 
-        <%--
-        
-
-        <form id="forma" action="procesarRegistroRol.do" method="post">
-            el action va MCURegistrar rol
-            el name es el valor que se pasa al MCURegistrarRol                todo tiene que estar en forms
-            <input type="text" id="nombre" name="nombre" size="50" maxlength="100"
-                    value="${formaNuevoRol.nombre}" />
-
-            <input type="text" name="descripcion" size="50" maxlength="100"
-                    value="${formaNuevoRol.descripcion}" />
-
-            <input type="submit" name="submit" value="Agregar y terminar"/>
-
-            <input type="submit" name="submit" value="Agregar y volver"
-                onclick="forma.action='procesarRegistroRol.do?volver=si'"/>
-
-        </form>
-
-        <form id="formDashboard" action="procesarDashboard.do" method="post">
-
-        </form>
-        --%>
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src="js/dashboard.js"></script>
 

@@ -19,7 +19,7 @@ import org.apache.struts.actions.MappingDispatchAction;
 
 
 
-public final class MCURegistrarRol
+public final class MCURegistrarRol 
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCURegistrarUsuario.class);
@@ -60,12 +60,12 @@ public final class MCURegistrarRol
             return (mapping.findForward("cancelar"));
         }
 
-
+        
         // Se obtienen los datos para procesar el registro
         //
         FormaNuevoRol forma = (FormaNuevoRol)form;
 
-        Rol rol = new Rol(forma.getNombre(), //get + name del input
+        Rol rol = new Rol(forma.getNombre(), //get + name del input 
                           forma.getDescripcion());
 
         ManejadorRoles mr = new ManejadorRoles();
@@ -73,30 +73,31 @@ public final class MCURegistrarRol
 
         ActionMessages errores = new ActionMessages();
         switch (resultado) {
-            case 0:
+            case 0:   
                 return (mapping.findForward("exito"));
 
             case 1:
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
                             new ActionMessage("errors.nombreRolYaExiste",
-                                               forma.getNombre()));
+                                               forma.getNombre()));                
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
 
             case 3:
                 log.error("Ocurri� un error de infraestructura");
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
-                            new ActionMessage("errors.infraestructura"));
+                            new ActionMessage("errors.infraestructura"));                
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
 
             default:
                 log.warn("ManejadorUsuario.crearUsuario regres� reultado inesperado");
                 errores.add(ActionMessages.GLOBAL_MESSAGE,
-                            new ActionMessage("errors.infraestructura"));
+                            new ActionMessage("errors.infraestructura"));                
                 saveErrors(request, errores);
                 return (mapping.getInputForward());
         }
     }
 
 }
+
