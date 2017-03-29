@@ -11,7 +11,7 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
-
+		<h1>Inicio branch test</h1>
         <h1>Dashboard</h1>
         <h3>Usuario: </h3>
         <h3 id="current-user"> <%= nombre %></h3>
