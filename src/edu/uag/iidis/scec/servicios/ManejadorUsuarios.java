@@ -58,7 +58,7 @@ public class ManejadorUsuarios {
             
             if (dao.existeUsuario(usuario.getCredencial()
                                          .getNombreUsuario())) {
-               resultado = 1; // Excepción. El nombre de usuario ya existe
+               resultado = 1; // Excepciï¿½n. El nombre de usuario ya existe
             } else {
 
                dao.hazPersistente(usuario);
@@ -74,7 +74,7 @@ public class ManejadorUsuarios {
             if (log.isWarnEnabled()) {
                 log.warn("<ExcepcionInfraestructura");
             }
-            resultado = 2;    // Excepción. Falla en la infraestructura
+            resultado = 2;    // Excepciï¿½n. Falla en la infraestructura
         } finally {
             HibernateUtil.closeSession();
         }

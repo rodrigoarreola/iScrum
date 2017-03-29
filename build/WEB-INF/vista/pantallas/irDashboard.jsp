@@ -40,6 +40,7 @@
             <button type="button" class="btn btn-primary btn-lg">Guardar cambios</button>
         </div>
 
+<<<<<<< HEAD
         <%--
 
 
@@ -63,6 +64,8 @@
 
         </form>
         --%>
+=======
+>>>>>>> 143fcab03998107787080a41b8895e2a0e02247e
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src="js/dashboard.js"></script>
 

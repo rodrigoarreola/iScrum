@@ -2,8 +2,6 @@
 
 body {
   background: #456;
-  background-image: url(background.jpg);
-  font-style: black;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -91,7 +89,7 @@ body {
 .login input[type="password"] {
   background: #fff;
   border-color: #bbb;
-  color: black;
+  color: #555;
 }
 
 /* Text fields' focus effect */
