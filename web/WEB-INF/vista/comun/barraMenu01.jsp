@@ -2,16 +2,16 @@
     <!-- IS: Barra Menu Principal -->
     <div class="row menu-icons center-xs">
         <div class="col-xs-1 box-icon">
-            <a href="irInicio.do"><i class="fa fa-home" aria-hidden="true"></i></a><br>
-            <p>Inicio</p>
+            <a href="irInicio.do"><i class="fa fa-home" aria-hidden="true"></i><br>
+            <p>Inicio</p></a>
         </div>
         <div class="col-xs-1 box-icon">
-            <a href="solicitarListarRoles.do"><i class="fa fa-users" aria-hidden="true"></i></a>
-            <br><p>Usuarios</p>
+            <a href="solicitarListarRoles.do"><i class="fa fa-users" aria-hidden="true"></i>
+            <br><p>Usuarios</p></a>
         </div>
         <div class="col-xs-1 box-icon">
-            <a href="irDashboard.do"><i class="fa fa-columns" aria-hidden="true"></i></a>
-            <br><p>Dashboard</p>
+            <a href="irDashboard.do"><i class="fa fa-columns" aria-hidden="true"></i>
+            <br><p>Dashboard</p></a>
         </div>
         <%-- <div class="col-xs-1 box-icon">
             <a href="solicitarListarLugares.do"><i class="fa fa-map-marker" aria-hidden="true"></i></a>

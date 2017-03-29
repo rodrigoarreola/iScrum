@@ -37,10 +37,15 @@ $('.list-container').on('click', '.glyphicon-remove', function(e) {
     });
 });
 
-
-
 function addCardToList($list) {
   var $newCard = $(newCard);
   $list.find('.list-inner-scroll').append($newCard);
   $newCard.focus();
 }
+
+$( document ).ready(function() {
+    var user = getElementById('current-user');
+    alert("Document on ready");
+    alert(user);
+    console.log(user);
+});
