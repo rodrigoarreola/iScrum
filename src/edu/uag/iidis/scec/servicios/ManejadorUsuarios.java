@@ -33,6 +33,25 @@ public class ManejadorUsuarios {
             throw new ExcepcionServicio(e.getMessage(), e);
         }
     }
+     public Collection listarUsuarios() {
+        Collection resultado;
+
+        if (log.isDebugEnabled()) {
+            log.debug(">guardarUsuario(usuario)");
+        }
+
+        try {
+            HibernateUtil.beginTransaction();
+            resultado = dao.buscarTodos();
+            HibernateUtil.commitTransaction();
+            return resultado;         
+        } catch (ExcepcionInfraestructura e) {
+            HibernateUtil.rollbackTransaction();
+            return null;
+        } finally {
+            HibernateUtil.closeSession();
+        }
+    }
 
 
     public Collection obtenerUsuarios(Usuario usuario) {

@@ -7,12 +7,17 @@
         </div>
         <div class="col-xs-1 box-icon">
             <a href="solicitarListarRoles.do"><i class="fa fa-users" aria-hidden="true"></i></a>
-            <br><p>Usuarios</p>
+            <br><p>Roles</p>
         </div>
         <div class="col-xs-1 box-icon">
             <a href="irDashboard.do"><i class="fa fa-columns" aria-hidden="true"></i></a>
             <br><p>Dashboard</p>
         </div>
+        <div class="col-xs-1 box-icon">
+            <a href="solicitarListarUsuarios.do"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+            <br><p>Usuarios</p>
+        </div>
+
         <%-- <div class="col-xs-1 box-icon">
             <a href="solicitarListarLugares.do"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
             <br><p>Lugares</p>
