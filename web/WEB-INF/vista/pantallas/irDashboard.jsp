@@ -23,10 +23,10 @@
         <div class="list-container">
 				<div class="list list-dimension">
 					<form id="formDashboard" action="procesarDashboard.do" method="post">
-						<input type="text" class="element" value="Product Backlog">
+						<input type="text" name="nameList" class="element" value="Product Backlog">
 						<ul class="list-inner-scroll">
 							<div class="input-group">
-								<input type="text" class="form-control"  aria-label="" placeholder="Hola">
+								<input type="text" class="form-control"  aria-label="" name="itemList" placeholder="Hola">
 								<span class="input-group-addon glyphicon glyphicon-remove"></span>
 							</div>
 						</ul>
