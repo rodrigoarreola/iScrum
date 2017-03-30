@@ -10,7 +10,7 @@
     </head>
 
     <body>
-        <h5>Welcome <%= nombre %> </h5>
+        <h5 >Welcome <%= nombre %> </h5>
         <form class="login-container" id="forma" action="procesarLogin.dd"  method="post">
             <button type="submit" class="btnIn button" value="Login">Cerrar sesion</button>
         </form>

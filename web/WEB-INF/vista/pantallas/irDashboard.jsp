@@ -21,18 +21,19 @@
         </div>
 
         <div class="list-container">
-            <div class="list list-dimension">
-                <input type="text" class="element" value="Product Backlog">
-                <ul class="list-inner-scroll">
-                    <div class="input-group">
-                        <input type="text" class="form-control"  aria-label="" placeholder="Hola">
-                        <span class="input-group-addon glyphicon glyphicon-remove"></span>
-                    </div>
-
-                </ul>
-                <button class="add-card-button btn btn-success">Agregar tarjeta</button>
-                <button class="delete-card-button btn btn-danger">Borrar lista</button>
-            </div>
+				<div class="list list-dimension">
+					<form id="formDashboard" action="procesarDashboard.do" method="post">
+						<input type="text" class="element" value="Product Backlog">
+						<ul class="list-inner-scroll">
+							<div class="input-group">
+								<input type="text" class="form-control"  aria-label="" placeholder="Hola">
+								<span class="input-group-addon glyphicon glyphicon-remove"></span>
+							</div>
+						</ul>
+						<button class="add-card-button btn btn-success">Agregar 	tarjeta</button>
+						<button class="delete-card-button btn btn-danger">Borrar lista</button>
+	        		</form>
+				</div>
             <button class="add-list-button list-dimension btn btn-success">Crear lista</button>
             <%-- <button type="button" class="btn btn-success">Crear lista</button> --%>
         </div>
@@ -46,7 +47,8 @@
 
         <form id="forma" action="procesarRegistroRol.do" method="post">
             el action va MCURegistrar rol
-            el name es el valor que se pasa al MCURegistrarRol                todo tiene que estar en forms
+            el name es el valor que se pasa al MCURegistrarRol
+			todo tiene que estar en forms
             <input type="text" id="nombre" name="nombre" size="50" maxlength="100"
                     value="${formaNuevoRol.nombre}" />
 
@@ -61,10 +63,21 @@
         </form>
 
         <form id="formDashboard" action="procesarDashboard.do" method="post">
-
+			<div class="list list-dimension">
+				<input type="text" class="element" value="Product Backlog">
+				<ul class="list-inner-scroll">
+					<div class="input-group">
+						<input type="text" class="form-control"  aria-label="" placeholder="Hola">
+						<span class="input-group-addon glyphicon glyphicon-remove"></span>
+					</div>
+				</ul>
+				<button class="add-card-button btn btn-success">Agregar tarjeta</button>
+				<button class="delete-card-button btn btn-danger">Borrar lista</button>
+			</div>
         </form>
+
         --%>
-		
+
         <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src="js/dashboard.js"></script>
 
