@@ -1,12 +1,16 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
     <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
     <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
-<style>
+
+    <link rel="stylesheet" type="text/css" href="css/materialize.css">
+    <script href="js/materialize.js"></script>
+
+    <style>
   .HipervinculoAdmon{
     color:#000000;
 	text-decoration:none;
   }
-  
+
   .HipervinculoAdmon:hover{
     color:#006666;
 	text-decoration:underline;
@@ -19,6 +23,8 @@
   }
 
 </script>
+
+
 
     <br>
 
@@ -51,13 +57,13 @@
 	    </tbody>
     </table>
             <script>
-          $(document).ready(function() 
-            { 
-                $("#myTable").tablesorter(); 
-            } 
+          $(document).ready(function()
+            {
+                $("#myTable").tablesorter();
+            }
         );
         </script>
-        
+
     <table cellpadding="0" cellspacing="0" width="60%" border="0" class="highlight">
         <tr>
             <td colspan="4" align="left" style="padding-top:25px;"><b>Total:</b> ${formaListadoRoles.contador}</td>

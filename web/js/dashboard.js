@@ -1,11 +1,13 @@
 var newList = `
 <div class="list list-dimension">
-    <input type="text" class="element" value="New list">
-    <ul class="list-inner-scroll">
-    </ul>
-    <button class="add-card-button btn btn-success">Agregar tarjeta</button>
-    <button class="delete-card-button btn btn-danger">Borrar lista</button>
-  </div>
+    <form id="formDashboard" action="procesarDashboard.do" method="post">
+        <input type="text" class="element" value="New List">
+        <ul class="list-inner-scroll">
+        </ul>
+        <button class="add-card-button btn btn-success">Agregar tarjeta</button>
+        <button class="delete-card-button btn btn-danger">Borrar lista</button>
+    </form>
+</div>
 `;
 
 // var newCard = `<input type="text" class="element-item">`
@@ -38,14 +40,16 @@ $('.list-container').on('click', '.glyphicon-remove', function(e) {
     });
 });
 
-// $( ".list" ).click(function() {
-//   $( this."input-group" ).fadeOut( "slow", function() {
-//     alert("hey!");
-//   });
-// });
 
 function addCardToList($list) {
   var $newCard = $(newCard);
   $list.find('.list-inner-scroll').append($newCard);
   $newCard.focus();
 }
+
+$( document ).ready(function() {
+    var user = getElementById('current-user');
+    alert("Document on ready");
+    alert(user);
+    console.log(user);
+});
