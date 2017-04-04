@@ -2,42 +2,49 @@
     <%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
     <%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
 
-    <h3>Product Backlog</h3>
-      <div class="row">
-                  <div class="grey darken-4">
-                    <ul class="tabs">
-                      <li class="tab col s3"><a href="#items">Items</a></li>
-                      <li class="tab col s3"><a  href="#Listado">Listado</a></li>
-                    </ul>
-                  </div>
-            <div id="items" class="col s12">
-                <br>
-                <form action="" >
+    <body class="container">
 
-                  <ul class="tabs">
-                      <div class="input-field col s6">
-                            <input name="Fist" id="first_name" type="text" class="validate">
-                            <label for="first_name">Requisito</label>
-                      </div>
-                      <div class="row">
+     <h3>Product Backlog</h3>
+       <div class="row">
+                   <div class="col s12">
+                     <ul class=" tabs">
+                       <li class="tab col s3 "><a href="#items">Items</a></li>
+                       <li class="tab col s3"><a  href="#Listado">Listado</a></li>
+                     </ul>
+                   </div>
+             <div id="items" class="col s12">
+                 <br>
+                 <form action="IngresarDatos.do" method="post">
+                   <ul class="tabs">
+                       <div class="input-field col s6">
+                             <input name="nombre" id="first_name" type="text" maxlength="50"class="validate" placeholder="Requisito">
+                       </div>
+                     </ul>
+               <br>
+               <div class="input-field col s12">
+                 <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion">
 
+               </div>
+             <input type="submit" class="waves-effect waves-light btn"name="Agregar" value="Agregar">
+             <button class="waves-effect waves-light btn" id="Listar">Listar</button >
 
-                      </div>
-                    </ul>
-                </form>
-              <br>
-              <div class="input-field col s12">
-                      <textarea id="textarea1" class="materialize-textarea"></textarea>
-                      <label for="textarea1">Descripcion</label>
-              </div>
-            <a class="waves-effect waves-light btn" id="Agregar">Agregar</a>
-        </div>
+             </form>
+         </div>
 
 
-    <div id="Listado" class="col s12">
+ <div id="Listado" class="col s12">
 
 
-    </div>
+ </div>
 
 
-    </div>
+   </div>
+
+
+
+    </body>
+    <script>
+    $( "#Agregar" ).click(function() {
+  $( "#Listado" ).append( "<h1>Hello</h1>" );;
+ });
+  </script>

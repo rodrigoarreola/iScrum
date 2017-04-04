@@ -23,6 +23,9 @@
         <form-bean name="formaNuevaPersona"
                    type="edu.uag.iidis.scec.vista.FormaNuevaPersona">
         </form-bean>
+        <form-bean name="FormaNuevoBacklog"
+                   type="edu.uag.iidis.scec.vista.FormaNuevoBacklog">
+        </form-bean>
         <form-bean name="formaNuevoRol"
                    type="edu.uag.iidis.scec.vista.FormaNuevoRol">
         </form-bean>
@@ -95,16 +98,29 @@
                 validate="false">
                 <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLoginScrum.jsp"/>
                 <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaInicio.jsp"/>
-                
-        </action>       
+
+        </action>
         <action path="/irLogin"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLoginScrum.jsp" />
         <action path="/solicitarBacklog"
-                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=backlog.jsp" />
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaBacklog.jsp" />
+
         <action path="/procesarLogin"
             type="edu.uag.iidis.scec.control.MCULogin"
             parameter="solicitarLogin"
             name="formaLogin"
+            scope="request"
+            validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaInicio.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaLoginScrum.jsp"/>
+
+        </action>
+
+
+        <action path="/IngresarDatos"
+            type="edu.uag.iidis.scec.control.MCURegistrarBack"
+            parameter="procesarRegistroBack"
+            name="FormaNuevoBacklog"
             scope="request"
             validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaInicio.jsp"/>
@@ -285,7 +301,7 @@
             <forward name="exito" path="/solicitarListarRoles.do" redirect="true" />
             <forward name="volver" path="solicitarRegistroRol.do" redirect="true"/>
        </action>
-       
+
        <action path="/procesarRegistroEstado"
                 type="edu.uag.iidis.scec.control.MCURegistrarEstado"
                 parameter="procesarRegistroEstado"

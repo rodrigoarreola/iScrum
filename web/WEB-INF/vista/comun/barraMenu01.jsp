@@ -13,6 +13,10 @@
             <a href="irDashboard.do"><i class="fa fa-columns" aria-hidden="true"></i>
             <br><p>Dashboard</p></a>
         </div>
+        <div class="col-xs-1 box-icon">
+            <a href="irBacklog.do"><i class="fa fa-columns" aria-hidden="true"></i>
+            <br><p>Backlog</p></a>
+        </div>
         <%-- <div class="col-xs-1 box-icon">
             <a href="solicitarListarLugares.do"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
             <br><p>Lugares</p>
