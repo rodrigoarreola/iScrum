@@ -6,29 +6,25 @@
             <p>Inicio</p></a>
         </div>
         <div class="col-xs-1 box-icon">
-<<<<<<< HEAD
+
             <a href="solicitarListarRoles.do"><i class="fa fa-users" aria-hidden="true"></i></a>
             <br><p>Roles</p>
-=======
-            <a href="solicitarListarRoles.do"><i class="fa fa-users" aria-hidden="true"></i>
-            <br><p>Usuarios</p></a>
->>>>>>> a76722021fc6b2afd9e094f5ea1bee38ddda54fb
+
         </div>
         <div class="col-xs-1 box-icon">
             <a href="irDashboard.do"><i class="fa fa-columns" aria-hidden="true"></i>
             <br><p>Dashboard</p></a>
         </div>
         <div class="col-xs-1 box-icon">
-<<<<<<< HEAD
-            <a href="irBacklog.do"><i class="fa fa-columns" aria-hidden="true"></i>
-            <br><p>Backlog</p></a>
+            <a href="irBacklog.do"><i class="fa fa-plus" aria-hidden="true"></i>
+            <br><p>Agregar</p></a>
         </div>
-=======
-            <a href="solicitarListarUsuarios.do"><i class="fa fa-user-plus" aria-hidden="true"></i></a>
+
+        <div class="col-xs-1 box-icon">
+            <a href="solicitarListarUsuarios.do"><i class="fa fa-user" aria-hidden="true"></i></a>
             <br><p>Usuarios</p>
         </div>
 
->>>>>>> fe4bba83dfd87350b1f1e64bc1c3e85b125555f0
         <%-- <div class="col-xs-1 box-icon">
             <a href="solicitarListarLugares.do"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
             <br><p>Lugares</p>
