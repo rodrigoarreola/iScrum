@@ -1,4 +1,6 @@
-<%@ taglib uri='http://java.sun.com/jsp/jstl/core' prefix='c'%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="/WEB-INF/vista/etiquetas/struts-html.tld" prefix="html" %>
 <% String nombre = (String) request.getSession().getAttribute("user1");%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -6,54 +8,180 @@
     <head>
         <meta charset="utf-8">
         <title>Dashboard</title>
+		<link rel="stylesheet" type="text/css" href="css/materialize.css">
+	    <script href="js/materialize.js"></script>
         <link rel="stylesheet" type="text/css" href="css/dashboard.css">
         <link rel="stylesheet" type="text/css" href="css/flexboxgrid.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     </head>
     <body>
 
-        <h1>Dashboard</h1>
-        <h3>Usuario: </h3>
-        <h3 id="current-user"> <%= nombre %></h3>
-        <div class="input-group">
-            <span class="input-group-addon">Usuario</span>
-            <input type="text" class="form-control"  aria-label="<%= nombre %>">
-        </div>
+	<div class="row">
+		<div class="col s6 m6">
+			<div class="card blue-grey darken-1">
+				<div class="card-content white-text">
+					<span class="card-title centered">Product Backlog</span>
+					<table class="centered">
+						<thead>
+							<tr>
+								<th>Detalles</th>
+								<th>Borrar</th>
+							</tr>
+						</thead>
 
-        <div class="list-container">
-				<div class="list list-dimension">
-					<%-- <form id="formDashboard" action="procesarDashboard.do" method="post"> --%>
-						<input type="text" name="nameList" class="element" value="Product Backlog">
-						<ul class="list-inner-scroll">
-							<div class="input-group">
-								<input type="text" class="form-control"  aria-label="" name="itemList" placeholder="Hola">
-								<%-- <span class="input-group-addon glyphicon glyphicon-remove"></span> --%>
-							</div>
-						</ul>
-						<hr>
-						<input name="item" type="text" maxlength="50" class="validate form-control" placeholder="Escribe...">
-						<button name="btn-send-item" class="add-card-button btn btn-success" onclick="getItem()">Agregar tarjeta</button>
-						<%-- <button class="delete-card-button btn btn-danger">Borrar lista</button> --%>
-	        		<%-- </form> --%>
+						<tbody>
+							<tr>
+								<td>Alvin</td>
+								<td>Eclair</td>
+							</tr>
+							<tr>
+								<td>Alan</td>
+								<td>Jellybean</td>
+							</tr>
+							<tr>
+								<td>Jonathan</td>
+								<td>Lollipop</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
-            <button class="add-list-button list-dimension btn btn-success">Crear lista</button>
-            <%-- <button type="button" class="btn btn-success">Crear lista</button> --%>
-        </div>
-        <div class="row center-xs">
-            <button type="button" class="btn btn-primary btn-lg">Guardar cambios</button>
-        </div>
+			</div>
+		</div>
 
-		<script type="text/javascript">
-		function getItem(){
-			console.log("entra a getItem");
-			var item = $('.item').attr('value')
-			alert(item);
-		}
-		</script>
+		<div class="col s6 m6">
+			<div class="card blue-grey darken-1">
+				<div class="card-content white-text">
+					<span class="card-title centered">To Do</span>
+					<table class="centered">
+						<thead>
+							<tr>
+								<th>Detalles</th>
+								<th>Borrar</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>Alvin</td>
+								<td>Eclair</td>
+							</tr>
+							<tr>
+								<td>Alan</td>
+								<td>Jellybean</td>
+							</tr>
+							<tr>
+								<td>Jonathan</td>
+								<td>Lollipop</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s6 m6">
+			<div class="card blue-grey darken-1">
+				<div class="card-content white-text">
+					<span class="card-title centered">In Progress</span>
+					<table class="centered">
+						<thead>
+							<tr>
+								<th>Detalles</th>
+								<th>Borrar</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>Alvin</td>
+								<td>Eclair</td>
+							</tr>
+							<tr>
+								<td>Alan</td>
+								<td>Jellybean</td>
+							</tr>
+							<tr>
+								<td>Jonathan</td>
+								<td>Lollipop</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+
+		<div class="col s6 m6">
+			<div class="card blue-grey darken-1">
+				<div class="card-content white-text">
+					<span class="card-title centered">Done</span>
+					<table class="centered">
+						<thead>
+							<tr>
+								<th>Detalles</th>
+								<th>Borrar</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr>
+								<td>Alvin</td>
+								<td>Eclair</td>
+							</tr>
+							<tr>
+								<td>Alan</td>
+								<td>Jellybean</td>
+							</tr>
+							<tr>
+								<td>Jonathan</td>
+								<td>Lollipop</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col s6 m6">
+			<div class="card blue-grey darken-1">
+				<div class="card-content white-text">
+					<span class="card-title centered">In Progress</span>
+					<table class="centered">
+						<thead>
+				            <tr>
+				                <th><h5>Nombre</h5></th>
+				                <th><h5>Rol</h5></th>
+				                <th><h5>Id</h5></th>
+				                <th><h5>Eliminar</h5></th>
+				            </tr>
+					    </thead>
+
+				        <tbody>
+				        <c:forEach var="rol" items="${formaListadoRoles.roles}">
+				            <tr>
+				                <td align="center" width="20%"><c:out value="${rol.nombre}"/></td>
+				                <td align="center" width="20%"><c:out value="${rol.descripcion}"/></td>
+				                <td align="center" width="20%"><c:out value="${rol.id}"/></td>
+				                <td align="center" width="20%">
+				                    <a href='procesarEliminarRol.do?id=<c:out value="${rol.id}"/>'
+									   onClick="javascript: return EliminarRol('<c:out value="${rol.nombre}"/>')"
+									   class="HipervinculoAdmon">
+				                        <fmt:message key="formaListadoRoles.etiqueta.eliminar" />
+				                    </a>
+				                </td>
+				            </tr>
+				        </c:forEach>
+					    </tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
 
 
-        <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-        <script src="js/dashboard.js"></script>
 
     </body>
 </html>
