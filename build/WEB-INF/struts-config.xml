@@ -138,8 +138,8 @@
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaBienvenida.jsp" />
         <action path="/irAyuda"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaAyuda.jsp" />
-        <action path="/irDashboard"
-                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=irDashboard.jsp" />
+        <action path="/FormaNuevoBacklog"
+                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=FormaNuevoBacklog.jsp" />
 
         <action path="/irBacklog"
                 forward="/WEB-INF/vista/pantallas/pantallaBacklog.jsp" />
