@@ -23,12 +23,13 @@ public class ManejadorRequisitos {
         Collection resultado;
 
         if (log.isDebugEnabled()) {
-            log.debug(">guardarUsuario(usuario)");
+            log.debug(">Ha jalado");
         }
 
         try {
             HibernateUtil.beginTransaction();
             resultado = dao.buscarTodos();
+            log.debug(resultado);
             HibernateUtil.commitTransaction();
             return resultado;
         } catch (ExcepcionInfraestructura e) {

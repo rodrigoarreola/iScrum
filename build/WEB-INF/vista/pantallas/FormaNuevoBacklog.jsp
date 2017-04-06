@@ -158,7 +158,7 @@
 					    </thead>
 
 				        <tbody>
-				        <c:forEach var="x" items="${formaNuevoBacklog.requisitos}">
+				        <c:forEach var="x" items="${FormaListadoRequisitos.requisito}">
 				            <tr>
 				                <td align="center"><c:out value="${x.nombre}"/></td>
 				                <td align="center"><c:out value="${x.descripcion}"/></td>

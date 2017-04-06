@@ -30,7 +30,7 @@ public class ManejadorRoles {
             HibernateUtil.beginTransaction();
             resultado = dao.buscarTodos();
             HibernateUtil.commitTransaction();
-            return resultado;         
+            return resultado;
         } catch (ExcepcionInfraestructura e) {
             HibernateUtil.rollbackTransaction();
             return null;
@@ -44,7 +44,7 @@ public class ManejadorRoles {
             log.debug(">eliminarRol(rol)");
         }
         try {
-            HibernateUtil.beginTransaction();           
+            HibernateUtil.beginTransaction();
             Rol rol = dao.buscarPorId(id, true);
             if (rol != null) {
               dao.hazTransitorio(rol);
@@ -70,10 +70,10 @@ public class ManejadorRoles {
         }
 
         try {
-            HibernateUtil.beginTransaction();           
-            
+            HibernateUtil.beginTransaction();
+
             if (dao.existeRol(rol.getNombre())) {
-               resultado = 1; // Excepción. El nombre de rol ya existe
+               resultado = 1; // Excepciï¿½n. El nombre de rol ya existe
             } else {
 
                dao.hazPersistente(rol);
@@ -89,10 +89,10 @@ public class ManejadorRoles {
             if (log.isWarnEnabled()) {
                 log.warn("<ExcepcionInfraestructura");
             }
-            resultado = 2;    // Excepción. Falla en la infraestructura
+            resultado = 2;    // Excepciï¿½n. Falla en la infraestructura
         } finally {
             HibernateUtil.closeSession();
         }
         return resultado;
-    }    
+    }
 }

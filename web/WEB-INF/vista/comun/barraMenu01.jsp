@@ -12,7 +12,7 @@
 
         </div>
         <div class="col-xs-1 box-icon">
-            <a href="FormaNuevoBacklog.do"><i class="fa fa-columns" aria-hidden="true"></i>
+            <a href="solicitarListarRequisitos.do"><i class="fa fa-columns" aria-hidden="true"></i>
             <br><p>Dashboard</p></a>
         </div>
         <div class="col-xs-1 box-icon">
