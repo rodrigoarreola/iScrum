@@ -153,25 +153,15 @@
 						<thead>
 				            <tr>
 				                <th><h5>Nombre</h5></th>
-				                <th><h5>Rol</h5></th>
-				                <th><h5>Id</h5></th>
-				                <th><h5>Eliminar</h5></th>
+				                <th><h5>Descripcion</h5></th>
 				            </tr>
 					    </thead>
 
 				        <tbody>
-				        <c:forEach var="rol" items="${formaListadoRoles.roles}">
+				        <c:forEach var="x" items="${formaNuevoBacklog.requisitos}">
 				            <tr>
-				                <td align="center" width="20%"><c:out value="${rol.nombre}"/></td>
-				                <td align="center" width="20%"><c:out value="${rol.descripcion}"/></td>
-				                <td align="center" width="20%"><c:out value="${rol.id}"/></td>
-				                <td align="center" width="20%">
-				                    <a href='procesarEliminarRol.do?id=<c:out value="${rol.id}"/>'
-									   onClick="javascript: return EliminarRol('<c:out value="${rol.nombre}"/>')"
-									   class="HipervinculoAdmon">
-				                        <fmt:message key="formaListadoRoles.etiqueta.eliminar" />
-				                    </a>
-				                </td>
+				                <td align="center"><c:out value="${x.nombre}"/></td>
+				                <td align="center"><c:out value="${x.descripcion}"/></td>
 				            </tr>
 				        </c:forEach>
 					    </tbody>

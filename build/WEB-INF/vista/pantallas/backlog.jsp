@@ -20,11 +20,10 @@
                 <form action="IngresarDatos.do" method="post" class="col s12">
                   <div class="row">
                     <div class="input-field col s12">
-                      <input name="nombre" id="first_name" type="text" maxlength="50" class="validate" placeholder="Requisito">
-                      <label for="nombre">Requisito</label>
+                      <input name="nombre" type="hidden"  class="validate" value="backlog">
                     </div>
                     <div class="input-field col s12">
-                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion">
+                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion"    autocomplete="off">
                       <label for="descripcion">Descripcion</label>
                     </div>
                   </div>
@@ -38,11 +37,10 @@
                 <form action="IngresarDatos.do" method="post" class="col s12">
                   <div class="row">
                     <div class="input-field col s12">
-                      <input name="nombre" id="first_name" type="text" maxlength="50" class="validate" placeholder="Requisito">
-                      <label for="nombre">Requisito</label>
+                      <input name="nombre" type="hidden"  class="validate" value="todo">
                     </div>
                     <div class="input-field col s12">
-                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion">
+                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion"   autocomplete="off">
                       <label for="descripcion">Descripcion</label>
                     </div>
                   </div>
@@ -58,11 +56,10 @@
                 <form action="IngresarDatos.do" method="post" class="col s12">
                   <div class="row">
                     <div class="input-field col s12">
-                      <input name="nombre" id="first_name" type="text" maxlength="50" class="validate" placeholder="Requisito">
-                      <label for="nombre">Requisito</label>
+                      <input name="nombre" type="hidden"  class="validate" value="inprogress">
                     </div>
                     <div class="input-field col s12">
-                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion">
+                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion"  autocomplete="off">
                       <label for="descripcion">Descripcion</label>
                     </div>
                   </div>
@@ -76,11 +73,10 @@
                 <form action="IngresarDatos.do" method="post" class="col s12">
                   <div class="row">
                     <div class="input-field col s12">
-                      <input name="nombre" id="first_name" type="text" maxlength="50" class="validate" placeholder="Requisito">
-                      <label for="nombre">Requisito</label>
+                      <input name="nombre" type="hidden"  class="validate" value="done">
                     </div>
                     <div class="input-field col s12">
-                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion">
+                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion" autocomplete="off">
                       <label for="descripcion">Descripcion</label>
                     </div>
                   </div>

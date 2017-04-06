@@ -2914,6 +2914,10 @@ table.highlight > tbody > tr:hover {
   background-color: #f2f2f2;
 }
 
+table.highlight tbody tr:hover {
+    color: #546E7A !important;
+}
+
 table.centered thead tr th, table.centered tbody tr td {
   text-align: center;
 }
