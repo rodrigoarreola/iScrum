@@ -26,6 +26,9 @@ public class Requisito extends ClaseBase
     public Requisito(Long id){
         this.id = id;
     }
+    public Requisito(String descripcion){
+        this.descripcion = descripcion;
+    }
 
     public Requisito(String nombre, String descripcion){
         this.nombre=nombre;
@@ -82,7 +85,7 @@ public class Requisito extends ClaseBase
         this.descripcion = descripcion;
     }
 
-    
+
 
 
 

@@ -23,7 +23,7 @@
                       <input name="nombre" type="hidden"  class="validate" value="backlog">
                     </div>
                     <div class="input-field col s12">
-                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion"    autocomplete="off">
+                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion"  required autocomplete="off">
                       <label for="descripcion">Descripcion</label>
                     </div>
                   </div>
@@ -40,7 +40,7 @@
                       <input name="nombre" type="hidden"  class="validate" value="todo">
                     </div>
                     <div class="input-field col s12">
-                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion"   autocomplete="off">
+                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion" required  autocomplete="off">
                       <label for="descripcion">Descripcion</label>
                     </div>
                   </div>
@@ -59,7 +59,7 @@
                       <input name="nombre" type="hidden"  class="validate" value="inprogress">
                     </div>
                     <div class="input-field col s12">
-                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion"  autocomplete="off">
+                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion" required autocomplete="off">
                       <label for="descripcion">Descripcion</label>
                     </div>
                   </div>
@@ -76,7 +76,7 @@
                       <input name="nombre" type="hidden"  class="validate" value="done">
                     </div>
                     <div class="input-field col s12">
-                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion" autocomplete="off">
+                      <input name="descripcion"  type="text" class="validate" maxlength="200" placeholder="Descripcion" required autocomplete="off">
                       <label for="descripcion">Descripcion</label>
                     </div>
                   </div>

@@ -40,14 +40,16 @@ public class ManejadorRequisitos {
         }
     }
 
-    public void eliminarRequisito(Long id) {
+    public void eliminarRequisito(String id) {
         if (log.isDebugEnabled()) {
-            log.debug(">eliminarRol(rol)");
+            log.debug(">eliminarRequisito(rol)");
         }
         try {
             HibernateUtil.beginTransaction();
-            Requisito rol = dao.buscarPorId(id, true);
+            Requisito rol = dao.buscarPorNombreDescripcion(id);
             if (rol != null) {
+              log.debug("Llego aca "+ rol);
+
               dao.hazTransitorio(rol);
             }
             HibernateUtil.commitTransaction();
@@ -73,14 +75,12 @@ public class ManejadorRequisitos {
         try {
             HibernateUtil.beginTransaction();
 
-            if (dao.existeRequisito(req.getNombre())) {
-               resultado = 1; // Excepci�n. El nombre de requisito ya existe
-           } else {
+
 
                dao.hazPersistente(req);
 
                resultado = 0; // Exito. El requisito se creo satisfactoriamente.
-        }
+
 
             HibernateUtil.commitTransaction();
 

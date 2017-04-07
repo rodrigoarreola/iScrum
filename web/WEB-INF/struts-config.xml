@@ -70,12 +70,15 @@
         <form-bean name="formaNuevoRecomendacion"
                    type="edu.uag.iidis.scec.vista.FormaNuevoRecomendacion">
         </form-bean>
-        <form-bean name="formaListadoRecomendaciones"
-                   type="edu.uag.iidis.scec.vista.FormaListadoRecomendaciones">
+        <form-bean name="FormaEliminarRequ"
+                   type="edu.uag.iidis.scec.vista.FormaEliminarRequ">
         </form-bean>
     </form-beans>
 
     <form-beans>
+        <form-bean name="formaNuevoEstado"
+                   type="edu.uag.iidis.scec.vista.FormaNuevoEstado">
+        </form-bean>
         <form-bean name="formaNuevoEstado"
                    type="edu.uag.iidis.scec.vista.FormaNuevoEstado">
         </form-bean>
@@ -126,12 +129,13 @@
 
         <action path="/irInicio"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaInicio.jsp" />
+
         <action path="/irBienvenida"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaBienvenida.jsp" />
         <action path="/irAyuda"
                 forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaAyuda.jsp" />
         <action path="/irDashboard"
-                forward="/WEB-INF/vista/pantallas/plantilla01.jsp?c=irDashboard.jsp" />
+                forward="/WEB-INF/vista/pantallas/FormaNuevoBacklog.jsp" />
 
         <action path="/irBacklog"
                 forward="/WEB-INF/vista/pantallas/pantallaBacklog.jsp" />
@@ -175,15 +179,22 @@
                 validate="false">
             <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=formaListadoPaises.jsp"/>
             <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaInicio.jsp"/>
-
-
-
-
-
-
-
-
         </action>
+
+        <!-- CAMBIOS AQUI -->
+        <action path="/solicitarEliminarRequisito"
+                type="edu.uag.iidis.scec.control.MCUEliminarRequisito"
+                parameter="procesarEliminarRequisito"
+                name="FormaEliminarRequ"
+                scope="request"
+                validate="false">
+            <forward name="exito" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaInicio.jsp"/>
+            <forward name="fracaso" path="/WEB-INF/vista/pantallas/plantilla01.jsp?c=pantallaInicio.jsp"/>
+        </action>
+
+
+
+
     <action path="/solicitarListarEstados"
                 type="edu.uag.iidis.scec.control.MCUListarEstados"
                 parameter="solicitarListarEstados"
@@ -297,6 +308,7 @@
             <forward name="volver" path="solicitarRegistroRol.do" redirect="true"/>
        </action>
 
+       <!-- CAMBIOS AQUI -->
        <action path="/solicitarListarRequisitos"
                type="edu.uag.iidis.scec.control.MCURegistrarBack"
                parameter="solicitarListarRequisitos"

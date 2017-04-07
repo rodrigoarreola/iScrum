@@ -89,6 +89,47 @@ public class RequisitoDAO {
         return requ;
     }
 
+    public Requisito buscarPorNombreDescripcion(String nombreRequisito)
+            throws ExcepcionInfraestructura {
+
+        if (log.isDebugEnabled()) {
+            log.debug(">buscarPorNombreDescripcion(" + nombreRequisito + ")");
+        }
+
+        Requisito requ = null;
+        try {
+            List requisitos = HibernateUtil.getSession()
+                    .createQuery("from Requisito where descripcion='"+nombreRequisito+"'")
+
+                    // .setString("descripcion", nombreRequisito)
+                    .list();
+//log.debug("sfsdFSDFDSFDSFDSFDSFDFDSF" + requisitos.get(0));
+log.debug("Tamano de los requisitos" + requisitos.size() );
+            if ((requisitos != null) && (requisitos.size() > 0)) {
+              log.debug("Rodri es una putita");
+                requ = (Requisito)requisitos.get(0);
+
+            }
+
+            if (requ == null) {
+                if (log.isDebugEnabled()) {
+                    log.debug(">buscarPorNombreDescripcion(" + nombreRequisito + ")");
+                }
+            }
+        } catch (HibernateException e) {
+            if (log.isWarnEnabled()) {
+                log.warn("<HibernateException");
+            }
+            throw new ExcepcionInfraestructura(e);
+        }
+log.debug("Para checar" + requ);
+        return requ;
+    }
+
+
+
+
+
 
 
     public Collection buscarTodos()

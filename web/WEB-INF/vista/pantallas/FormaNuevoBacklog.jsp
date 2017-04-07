@@ -23,26 +23,25 @@
 					<span class="card-title centered">Product Backlog</span>
 					<table class="centered">
 						<thead>
-							<tr>
-								<th>Detalles</th>
-								<th>Borrar</th>
-							</tr>
-						</thead>
+				            <tr>
+				                <th><h5>Detalles</h5></th>
+				                <th><h5>Borrar</h5></th>
+				            </tr>
+					    </thead>
 
-						<tbody>
-							<tr>
-								<td>Alvin</td>
-								<td>Eclair</td>
-							</tr>
-							<tr>
-								<td>Alan</td>
-								<td>Jellybean</td>
-							</tr>
-							<tr>
-								<td>Jonathan</td>
-								<td>Lollipop</td>
-							</tr>
-						</tbody>
+				        <tbody>
+				        <c:forEach var="x" items="${FormaListadoRequisitos.requisito}">
+				            <tr>
+												<c:if test = "${x.nombre =='backlog'}">
+													<td align="center"><c:out value="${x.descripcion}"/></td>
+													<td align="center"> <a href='solicitarEliminarRequisito.do?descripcion=<c:out value="${x.descripcion}"/>'>
+														X
+			                    </a></td>
+					                <%-- <td align="center"><c:out value="${x.nombre}"/></td> --%>
+												</c:if>
+				            </tr>
+				        </c:forEach>
+					    </tbody>
 					</table>
 				</div>
 			</div>
@@ -54,26 +53,29 @@
 					<span class="card-title centered">To Do</span>
 					<table class="centered">
 						<thead>
-							<tr>
-								<th>Detalles</th>
-								<th>Borrar</th>
-							</tr>
-						</thead>
+				            <tr>
+				                <th><h5>Detalles</h5></th>
+				                <th><h5>Borrar</h5></th>
+				            </tr>
+					    </thead>
 
-						<tbody>
-							<tr>
-								<td>Alvin</td>
-								<td>Eclair</td>
-							</tr>
-							<tr>
-								<td>Alan</td>
-								<td>Jellybean</td>
-							</tr>
-							<tr>
-								<td>Jonathan</td>
-								<td>Lollipop</td>
-							</tr>
-						</tbody>
+				        <tbody>
+				        <c:forEach var="x" items="${FormaListadoRequisitos.requisito}">
+				            <tr>
+											<c:if test = "${x.nombre =='todo'}">
+												<td align="center"><c:out value="${x.descripcion}"/></td>
+
+												<td align="center">
+													<td align="center"> <a href='solicitarEliminarRequisito.do?descripcion=<c:out value="${x.descripcion}"/>'>
+														X
+			                    </a></td>
+												</td>
+
+												<%-- <td align="center"><c:out value="${x.nombre}"/></td> --%>
+											</c:if>
+				            </tr>
+				        </c:forEach>
+					    </tbody>
 					</table>
 				</div>
 			</div>
@@ -87,26 +89,25 @@
 					<span class="card-title centered">In Progress</span>
 					<table class="centered">
 						<thead>
-							<tr>
-								<th>Detalles</th>
-								<th>Borrar</th>
-							</tr>
-						</thead>
+				            <tr>
+				                <th><h5>Detalles</h5></th>
+				                <th><h5>Borrar</h5></th>
+				            </tr>
+					    </thead>
 
-						<tbody>
-							<tr>
-								<td>Alvin</td>
-								<td>Eclair</td>
-							</tr>
-							<tr>
-								<td>Alan</td>
-								<td>Jellybean</td>
-							</tr>
-							<tr>
-								<td>Jonathan</td>
-								<td>Lollipop</td>
-							</tr>
-						</tbody>
+				        <tbody>
+				        <c:forEach var="x" items="${FormaListadoRequisitos.requisito}">
+				            <tr>
+											<c:if test = "${x.nombre =='inprogress'}">
+												<td align="center"><c:out value="${x.descripcion}"/></td>
+												<td align="center"> <a href='solicitarEliminarRequisito.do?descripcion=<c:out value="${x.descripcion}"/>'>
+													X
+												</a></td>
+												<%-- <td align="center"><c:out value="${x.nombre}"/></td> --%>
+											</c:if>
+				            </tr>
+				        </c:forEach>
+					    </tbody>
 					</table>
 				</div>
 			</div>
@@ -118,50 +119,22 @@
 					<span class="card-title centered">Done</span>
 					<table class="centered">
 						<thead>
-							<tr>
-								<th>Detalles</th>
-								<th>Borrar</th>
-							</tr>
-						</thead>
-
-						<tbody>
-							<tr>
-								<td>Alvin</td>
-								<td>Eclair</td>
-							</tr>
-							<tr>
-								<td>Alan</td>
-								<td>Jellybean</td>
-							</tr>
-							<tr>
-								<td>Jonathan</td>
-								<td>Lollipop</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="col s6 m6">
-			<div class="card blue-grey darken-1">
-				<div class="card-content white-text">
-					<span class="card-title centered">In Progress</span>
-					<table class="centered">
-						<thead>
 				            <tr>
-				                <th><h5>Nombre</h5></th>
-				                <th><h5>Descripcion</h5></th>
+				                <th><h5>Detalles</h5></th>
+				                <th><h5>Borrar</h5></th>
 				            </tr>
 					    </thead>
 
 				        <tbody>
 				        <c:forEach var="x" items="${FormaListadoRequisitos.requisito}">
 				            <tr>
-				                <td align="center"><c:out value="${x.nombre}"/></td>
-				                <td align="center"><c:out value="${x.descripcion}"/></td>
+											<c:if test = "${x.nombre =='done'}">
+												<td align="center"><c:out value="${x.descripcion}"/></td>
+												<td align="center"> <a href='solicitarEliminarRequisito.do?descripcion=<c:out value="${x.descripcion}"/>'>
+													X
+												</a></td>
+												<%-- <td align="center"><c:out value="${x.nombre}"/></td> --%>
+											</c:if>
 				            </tr>
 				        </c:forEach>
 					    </tbody>
@@ -170,6 +143,8 @@
 			</div>
 		</div>
 	</div>
+
+
 
 
 
