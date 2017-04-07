@@ -10,6 +10,14 @@ import edu.uag.iidis.scec.excepciones.*;
 import edu.uag.iidis.scec.persistencia.RequisitoDAO;
 import edu.uag.iidis.scec.persistencia.hibernate.*;
 
+/**
+ * Esta clase es usada para establecer diversas acciones tales como eliminar, listar, etc para los requisitos del Backlog
+ *
+ *
+ *
+ * @author Luis Fernando Herrera Pimentel / Rodrigo Enrique Arreola Pozo
+ * @version 1.3
+ */
 public class ManejadorRequisitos {
     private Log log = LogFactory.getLog(ManejadorRequisitos.class);
     private RequisitoDAO dao;
@@ -18,6 +26,10 @@ public class ManejadorRequisitos {
         dao = new RequisitoDAO();
     }
 
+    /**
+     * Metodo que establece la accion de listar los requisitos
+     *  @return Collection con los requisitos
+     */
 
     public Collection listarRequisitos() {
         Collection resultado;
@@ -39,6 +51,12 @@ public class ManejadorRequisitos {
             HibernateUtil.closeSession();
         }
     }
+
+    /**
+     * Metodo que establece la accion de eliminar los requisitos
+     *  @param id El parámetro id contiene la descripcion del requisito a eliminar
+     *
+     */
 
     public void eliminarRequisito(String id) {
         if (log.isDebugEnabled()) {
@@ -63,6 +81,12 @@ public class ManejadorRequisitos {
         }
 
     }
+
+    /**
+     * Metodo que establece la accion de crear los requisitos
+     *  @param req El parámetro req contiene el nombre y  la descripcion del requisito a crear
+     *
+     */
 
     public int crearRequisito(Requisito req) {
 

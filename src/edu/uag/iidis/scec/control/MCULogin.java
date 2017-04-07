@@ -18,9 +18,16 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
+/**
+ * Esta clase es usada para establecer diversas acciones para los requisitos del Backlog
+ *
+ *
+ *
+ * @author Modificada por Kevin Alejandro ALtamirano Perez
+ * @version 1.0
+ */
 
-
-public final class MCULogin 
+public final class MCULogin
         extends MappingDispatchAction {
 
     private Log log = LogFactory.getLog(MCULogin.class);
@@ -30,19 +37,23 @@ public final class MCULogin
                 HttpServletRequest request,
                 HttpServletResponse response)throws Exception {
 
-        
+
         request.getSession().invalidate();
 
         return (mapping.findForward("exito"));
-           
+
     }
+    /**
+     * Metodo que regresa  un action forward para establecer el destino del path
+     * @return ActionForward
+     */
 
     public ActionForward solicitarLogin(
                 ActionMapping mapping,
                 ActionForm form,
                 HttpServletRequest request,
                 HttpServletResponse response)
-            throws Exception {  
+            throws Exception {
 		ActionMessages errores = new ActionMessages();
 		//String username = loginForm.getUsername();
         if (log.isDebugEnabled()) {
@@ -53,7 +64,7 @@ public final class MCULogin
 
         Collection resultado = mr.buscarLogin(forma.getUser(),forma.getPassword());
 		//User user = new User("Victor", "1234");
-// simulamos que no se autentico	
+// simulamos que no se autentico
 	   //request.getSession().setAttribute("user", user);
         User user = null;
         if (resultado.size() != 0) {
@@ -69,12 +80,12 @@ public final class MCULogin
         } else {
             log.error("El usuario no existe");
             errores.add(ActionMessages.GLOBAL_MESSAGE,
-                        new ActionMessage("errors.NoExisteUsuario"));                
+                        new ActionMessage("errors.NoExisteUsuario"));
             saveErrors(request, errores);
             return ( mapping.findForward("fracaso"));
         }
-  
+
     }
 
-    
+
 }

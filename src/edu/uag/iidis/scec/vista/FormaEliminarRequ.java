@@ -9,9 +9,9 @@ import org.apache.struts.validator.ValidatorForm;
 
 
 /**
- * Form bean para el registro de una nueva persona.
+ * Form bean para la eliminacion de un requisito
  *
- * @author Victor Ramos
+ * @author Luis Fernando Herrera Pimentel
  */
 public final class FormaEliminarRequ
         extends ValidatorForm {

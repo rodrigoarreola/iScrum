@@ -17,6 +17,15 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
+/**
+ * Esta clase es usada para establecer diversas acciones para los requisitos del Backlog
+ *
+ *
+ *
+ * @author Luis Fernando Herrera Pimentel / Rodrigo Enrique Arreola Pozo
+ * @version 1.3
+ */
+
 
 
 public final class MCURegistrarBack
@@ -25,6 +34,10 @@ public final class MCURegistrarBack
     private Log log = LogFactory.getLog(MCURegistrarBack.class);
 
 
+    /**
+     * Metodo que regresa  un action forward para establecer el destino del path
+     * @return ActionForward
+     */
     public ActionForward solicitarRegistro(
                 ActionMapping mapping,
                 ActionForm form,
@@ -39,6 +52,11 @@ public final class MCURegistrarBack
         return (mapping.findForward("exito"));
 
     }
+
+    /**
+     *Metodo que regresa  un action forward y con este metodo permite el listado de los requisitos
+     * @return ActionForward
+     */
 
     public ActionForward solicitarListarRequisitos(
                 ActionMapping mapping,
@@ -62,7 +80,7 @@ public final class MCURegistrarBack
         FormaListadoRequisitos forma = (FormaListadoRequisitos)form;
 
         ManejadorRequisitos mr = new ManejadorRequisitos();
-        Collection resultado = mr.listarRequisitos();
+        Collection resultado = mr.listarRequisitos(); //Metodo utilizado para Listar los requisitos
 
         ActionMessages errores = new ActionMessages();
         if (resultado != null) {
@@ -84,7 +102,10 @@ public final class MCURegistrarBack
 
     }
 
-
+    /**
+     * Regresa  un action forward y con este metodo permite el agregar un nuevo  requisito
+     * @return ActionForward
+     */
 
 
     public ActionForward procesarRegistroBack(
@@ -107,17 +128,16 @@ public final class MCURegistrarBack
         }
 
 
-        // Se obtienen los datos para procesar el registro
+        // Se obtienen los datos para crear el requisito
         //
         FormaNuevoBacklog forma = (FormaNuevoBacklog)form;
-        log.debug("---------------------------------");
-        log.debug(forma);
+
 
         Requisito requisito = new Requisito(forma.getNombre(), //get + name del input
                           forma.getDescripcion());
 
         ManejadorRequisitos mr = new ManejadorRequisitos();
-        int resultado = mr.crearRequisito(requisito);
+        int resultado = mr.crearRequisito(requisito); //metodo utilizado para crear un requisito
         log.debug( + resultado);
 
         ActionMessages errores = new ActionMessages();
@@ -150,7 +170,10 @@ public final class MCURegistrarBack
 
 
 
-
+    /**
+     * Regresa  un action forward y con este metodo permite la eliminacion  de un requisito
+     * @return ActionForward
+     */
     public ActionForward eliminarRequisito(
                 ActionMapping mapping,
                 ActionForm form,
@@ -171,7 +194,7 @@ public final class MCURegistrarBack
         }
 
 
-        // Se obtienen los datos para procesar el registro
+        // Se obtienen los datos para procesar la eliminacion del requisito
         //
         FormaNuevoBacklog forma = (FormaNuevoBacklog)form;
         log.debug("---------------------------------");

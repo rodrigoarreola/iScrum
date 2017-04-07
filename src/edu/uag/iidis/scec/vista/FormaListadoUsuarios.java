@@ -12,7 +12,7 @@ import org.apache.struts.validator.ValidatorForm;
 /**
  * Form bean para el registro de una nueva persona.
  *
- * @author Victor Ramos
+ * @author Daniel Esteban Nandayapa
  */
 public final class FormaListadoUsuarios
         extends ValidatorForm {
@@ -32,7 +32,7 @@ public final class FormaListadoUsuarios
     public Collection getUsuarios() {
         return (this.usuarios);
     }
-  
+
     public int getContador() {
         return (this.contador);
     }

@@ -10,9 +10,10 @@ import org.apache.struts.validator.ValidatorForm;
 
 
 /**
- * Form bean para el registro de una nueva persona.
+ * Form bean para el registro de un nuevo requisito
  *
- * @author Victor Ramos
+ * @author Luis Fernando Herrera Pimentel / Rodrigo Enrique Arreola Pozo
+ * @version 1.3
  */
 public final class FormaListadoRequisitos
         extends ValidatorForm {

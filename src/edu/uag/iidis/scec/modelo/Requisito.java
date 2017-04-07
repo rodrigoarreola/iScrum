@@ -7,9 +7,9 @@ import java.util.*;
 /**
  * Esta clase es usada para representar un requisito del Backlog
  *
- * <p><a href="requisito.java.html"><i>Ver c�digo fuente</i></a></p>
+ * 
  *
- * @author <a href="mailto:vramos@uag.mx">Victor Ramos</a>
+ * @author Luis Fernando Herrera Pimentel / Rodrigo Enrique Arreola Pozo
  * @version 1.0
  */
 public class Requisito extends ClaseBase
@@ -41,14 +41,6 @@ public class Requisito extends ClaseBase
      */
     public Long getId() {
         return this.id;
-    }
-
-    /**
-     * Establece el id del requisito.
-     * @return void
-     */
-    public void setId(Long id) {
-        this.id = id;
     }
 
 

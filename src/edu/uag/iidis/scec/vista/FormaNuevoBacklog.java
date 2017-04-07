@@ -12,7 +12,7 @@ import org.apache.struts.validator.ValidatorForm;
 /**
  * Form bean para el registro de un nuevo requisito.
  *
- * @author Victor Ramos
+ * @author Luis Fernando Herrera Pimentel
  */
 public final class FormaNuevoBacklog
         extends ValidatorForm {

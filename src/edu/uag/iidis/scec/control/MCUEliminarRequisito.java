@@ -17,6 +17,14 @@ import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
 import org.apache.struts.actions.MappingDispatchAction;
 
+/**
+ * Esta clase es usada para establecer diversas acciones para los requisitos del Backlog principalmente la eliminacion
+ *
+ *
+ *
+ * @author Luis Fernando Herrera Pimentel / Rodrigo Enrique Arreola Pozo
+ * @version 1.1
+ */
 
 
 public final class MCUEliminarRequisito
@@ -24,6 +32,10 @@ public final class MCUEliminarRequisito
 
     private Log log = LogFactory.getLog(MCUEliminarRequisito.class);
 
+    /**
+     * Metodo que regresa  un action forward para establecer el path la eliminacion del requisito
+     * @return ActionForward
+     */
 
     public ActionForward procesarEliminarRequisito(
                 ActionMapping mapping,
@@ -36,7 +48,7 @@ public final class MCUEliminarRequisito
             log.debug(">procesarEliminarRol");
         }
 
-        FormaEliminarRequ forma = (FormaEliminarRequ)form;
+          FormaEliminarRequ forma = (FormaEliminarRequ)form;
         ManejadorRequisitos mr = new ManejadorRequisitos();
         mr.eliminarRequisito(forma.getDescripcion());
         return (mapping.findForward("exito"));
