@@ -170,69 +170,6 @@ public final class MCURegistrarBack
 
 
 
-    /**
-     * Regresa  un action forward y con este metodo permite la eliminacion  de un requisito
-     * @return ActionForward
-     */
-    public ActionForward eliminarRequisito(
-                ActionMapping mapping,
-                ActionForm form,
-                HttpServletRequest request,
-                HttpServletResponse response)
-            throws Exception {
 
-        if (log.isDebugEnabled()) {
-            log.debug(">solicitarRegistro");
-        }
-
-        // Verifica si la acci�n fue cancelada por el usuario
-        if (isCancelled(request)) {
-            if (log.isDebugEnabled()) {
-                log.debug("<La acci�n fue cancelada");
-            }
-            return (mapping.findForward("cancelar"));
-        }
-
-
-        // Se obtienen los datos para procesar la eliminacion del requisito
-        //
-        FormaNuevoBacklog forma = (FormaNuevoBacklog)form;
-        log.debug("---------------------------------");
-        log.debug(forma);
-
-        Requisito requisito = new Requisito( //get + name del input
-                          forma.getDescripcion());
-
-        ManejadorRequisitos mr = new ManejadorRequisitos();
-        int resultado = mr.eliminarRequisito(requisito);
-        log.debug( + resultado);
-
-        ActionMessages errores = new ActionMessages();
-        switch (resultado) {
-            case 0:
-                return (mapping.findForward("exito"));
-
-            case 1:
-                errores.add(ActionMessages.GLOBAL_MESSAGE,
-                            new ActionMessage("errors.nombreRequisitoYaExiste",
-                                               forma.getNombre()));
-                saveErrors(request, errores);
-                return (mapping.getInputForward());
-
-            case 3:
-                log.error("Ocurri� un error de infraestructura");
-                errores.add(ActionMessages.GLOBAL_MESSAGE,
-                            new ActionMessage("errors.infraestructura"));
-                saveErrors(request, errores);
-                return (mapping.getInputForward());
-
-            default:
-                log.warn("ManejadorUsuario.crearUsuario regres� reultado inesperado");
-                errores.add(ActionMessages.GLOBAL_MESSAGE,
-                            new ActionMessage("errors.infraestructura"));
-                saveErrors(request, errores);
-                return (mapping.getInputForward());
-        }
-    }
 
 }

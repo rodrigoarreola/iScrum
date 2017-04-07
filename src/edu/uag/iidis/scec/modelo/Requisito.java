@@ -7,7 +7,7 @@ import java.util.*;
 /**
  * Esta clase es usada para representar un requisito del Backlog
  *
- * 
+ *
  *
  * @author Luis Fernando Herrera Pimentel / Rodrigo Enrique Arreola Pozo
  * @version 1.0
