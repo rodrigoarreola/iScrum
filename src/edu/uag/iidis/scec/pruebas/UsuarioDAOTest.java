@@ -15,7 +15,6 @@ import edu.uag.iidis.scec.persistencia.hibernate.HibernateUtil;
 
 import java.util.*;
 
-
 public class UsuarioDAOTest extends TestCase {
 
     private static UsuarioDAO dao = null;
@@ -29,33 +28,6 @@ public class UsuarioDAOTest extends TestCase {
         // se ejecuta al final de cada método de prueba
     }
 
-    public void testCrearUsuario() throws Exception {
-        Usuario usuario = new Usuario(
-                    new NombrePersona("Ing.",
-                                      "Gonzalo",
-                                      "Osuna", "Millán", 
-                                      "", "gom"),
-                    new Credencial("gosuna","123"));
-        try {
-            HibernateUtil.beginTransaction();
-            dao.hazPersistente(usuario);
-            HibernateUtil.commitTransaction();
-
-            assertTrue(usuario.getId() != null);
-            assertTrue(usuario.getNombre()
-                              .getApellidoPaterno()
-                              .equals("Osuna"));
-            assertTrue(usuario.getCredencial()
-                              .getNombreUsuario()
-                              .equals("gosuna"));
-        } catch (Exception e) {
-            HibernateUtil.rollbackTransaction();
-            throw e;
-        } finally{
-            HibernateUtil.closeSession();
-        }
-    }
-
     public void testCrearUsuarioInvalido() throws Exception {
         Usuario usuario = new Usuario(
                     new NombrePersona("Ing.",
@@ -67,8 +39,6 @@ public class UsuarioDAOTest extends TestCase {
         try {
             HibernateUtil.beginTransaction();
             dao.hazPersistente(usuario);
-            HibernateUtil.commitTransaction();
-            fail("Falló");
         } catch (Exception e) {
             HibernateUtil.rollbackTransaction();
         } finally{
@@ -76,15 +46,39 @@ public class UsuarioDAOTest extends TestCase {
         }
     }
 
+     public void testCrearUsuario() throws Exception {
+        Usuario usuario = new Usuario(
+                    new NombrePersona("Ing.",
+                                      "Gonzalo",
+                                      "Osuna", "Millán", 
+                                      "", "gom"),
+                    new Credencial("gosuna1","123"));
+        try {
+            HibernateUtil.beginTransaction();
+            dao.hazPersistente(usuario);
+            HibernateUtil.commitTransaction();
+
+            assertTrue(usuario.getId() != null);
+            assertTrue(usuario.getNombre()
+                              .getApellidoPaterno()
+                              .equals("Osuna"));
+            assertTrue(usuario.getCredencial()
+                              .getNombreUsuario()
+                              .equals("gosuna1"));
+        } catch (Exception e) {
+            HibernateUtil.rollbackTransaction();
+            throw e;
+        } finally{
+            HibernateUtil.closeSession();
+        }
+    }
 
     public void testBuscarUsuarioPorId() throws Exception {
         Usuario usuario;
         try {
             usuario = dao.buscarPorId(new Long(1), false);
             assertTrue(usuario.getId() != null);
-            assertTrue(usuario.getNombre()
-                              .getApellidoPaterno()
-                              .equals("Osuna"));
+
         } catch (Exception e) {
             throw e;
         } finally{
@@ -92,15 +86,11 @@ public class UsuarioDAOTest extends TestCase {
         }
     }
 
-
-    public void testBuscarPorEjemplo() throws Exception {
-        Usuario usuario = new Usuario();
-        Collection usuarios;
-
-        usuario.setCredencial(new Credencial("gosuna", null));
+    public void testBuscarUsuarioPorIdInvalido() throws Exception {
+        Usuario usuario;
         try {
-            usuarios = dao.buscarPorEjemplo(usuario);
-            assertTrue(usuarios.size() == 1);
+            usuario = dao.buscarPorId(new Long(10000), false);
+            assertTrue(usuario.getId() == null);
         } catch (Exception e) {
             throw e;
         } finally{
@@ -114,7 +104,7 @@ public class UsuarioDAOTest extends TestCase {
 
         try {
             usuarios = dao.buscarTodos();
-            assertTrue(usuarios.size() == 1);
+            assertTrue(usuarios.size() >= 1);
         } catch (Exception e) {
             throw e;
         } finally{
@@ -122,33 +112,24 @@ public class UsuarioDAOTest extends TestCase {
         }
     }
 
-
-    public void testAgregarRol() throws Exception {
-        Usuario usuario;
-        Rol rol1 = new Rol("rol1","descripcion rol1");
-        Rol rol2 = new Rol("rol2","descripcion rol2");
-        try {
-            HibernateUtil.beginTransaction();
-            usuario = dao.buscarPorId(new Long(1), false);
-            usuario.addRol(new Rol("rol1","descripcion rol1"));
-            usuario.addRol(new Rol("rol2","descripcion rol2"));
-            dao.hazPersistente(usuario);
-            HibernateUtil.commitTransaction();
-            assertTrue(usuario.getRoles().size() == 2);
-        } catch (Exception e) {
-            HibernateUtil.rollbackTransaction();
-            throw e;
-        } finally{
-            HibernateUtil.closeSession();
+    public void testBuscarTodosInvalido() throws Exception {
+        Collection usuarios;
+            try {
+                usuarios = dao.buscarTodos();
+                System.out.println("usuarios_"+usuarios.size());
+                assertTrue(usuarios.size() == 0); /*tiene exito si no hay datos en la tabla*/
+            } catch (Exception e) {
+                throw e;
+            } finally{
+                HibernateUtil.closeSession();
+            }
         }
-    }
 
-
-    public void testVerificarRol() throws Exception {
-        Usuario usuario;
+    public void testBuscarPorNombre() throws Exception {
+        Usuario usuarios;
         try {
-            usuario = dao.buscarPorId(new Long(1), false);
-            assertTrue(usuario.getRoles().size() == 2);
+            usuarios = dao.buscarPorNombreUsuario("daniel");
+            assertTrue(usuarios.getCredencial().getNombreUsuario().equals("daniel"));
         } catch (Exception e) {
             throw e;
         } finally{
@@ -156,17 +137,11 @@ public class UsuarioDAOTest extends TestCase {
         }
     }
 
-    public void testEliminarRol() throws Exception {
-        Usuario usuario;
-        Rol rol;
+    public void testBuscarPorNombreInvalido() throws Exception {
+        Usuario usuarios;
         try {
-            HibernateUtil.beginTransaction();
-            rol = rolDAO.buscarPorId(new Long(2), false);
-            usuario = dao.buscarPorId(new Long(1), false);
-            usuario.removeRol(rol);
-            dao.hazPersistente(usuario);
-            HibernateUtil.commitTransaction();
-            assertTrue(usuario.getRoles().size() == 1);
+            usuarios = dao.buscarPorNombreUsuario("rooto");
+            assertTrue(usuarios== null);
         } catch (Exception e) {
             throw e;
         } finally{
@@ -179,10 +154,7 @@ public class UsuarioDAOTest extends TestCase {
        TestSetup suite = new TestSetup(new TestSuite(UsuarioDAOTest.class)) {
 
             protected void setUp(  ) throws Exception {
-                // Se ejecuta al inicio de la suite
-
-                SchemaExport ddlExport = new SchemaExport(HibernateUtil.getConfiguration());
-                ddlExport.create(false, true);
+                // Se ejecuta al inicio de la TestSuite
 
                 dao = new UsuarioDAO();
                 rolDAO = new RolDAO();

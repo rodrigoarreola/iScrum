@@ -47,6 +47,34 @@ public class RolDAOTest extends TestCase {
         }
     }
 
+
+	public void testBuscarTodos() throws Exception {
+        Collection roles;
+
+        try {
+            roles= dao.buscarTodos();
+            assertTrue(roles.size() > 0);
+        } catch (Exception e) {
+            throw e;
+        } finally{
+            HibernateUtil.closeSession();
+        }
+    }
+
+    public void testBuscarTodosInvalido() throws Exception {
+        Collection roles;
+
+        try {
+            roles = dao.buscarTodos();
+            assertTrue("Si no hay datos en la tabla success",roles.size() == 0);
+        } catch (Exception e) {
+            throw e;
+        } finally{
+            HibernateUtil.closeSession();
+        }
+    }
+
+
     public static Test suite() {
 
        TestSetup suite = new TestSetup(new TestSuite(RolDAOTest.class)) {
@@ -54,9 +82,7 @@ public class RolDAOTest extends TestCase {
             protected void setUp(  ) throws Exception {
                 // Se ejecuta al inicio de la suite de pruebas
 
-                SchemaExport ddlExport = new SchemaExport(HibernateUtil.getConfiguration());
-                ddlExport.create(false, true);
-
+                
                 dao = new RolDAO();
             }
 
