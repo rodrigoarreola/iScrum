@@ -19,7 +19,7 @@ public class AllTests extends TestCase {
 
         suite.addTest(RolDAOTest.suite());
 	suite.addTest(LoginDAOTest.suite());
-        //suite.addTest(UsuarioDAOTest.suite());
+        suite.addTest(UsuarioDAOTest.suite());
 
         return suite;
     }

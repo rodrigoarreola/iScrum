@@ -128,8 +128,8 @@ public class UsuarioDAOTest extends TestCase {
     public void testBuscarPorNombre() throws Exception {
         Usuario usuarios;
         try {
-            usuarios = dao.buscarPorNombreUsuario("daniel");
-            assertTrue(usuarios.getCredencial().getNombreUsuario().equals("daniel"));
+            usuarios = dao.buscarPorNombreUsuario("Fernando");
+            assertTrue(usuarios.getCredencial().getNombreUsuario().equals("Fernando"));
         } catch (Exception e) {
             throw e;
         } finally{
