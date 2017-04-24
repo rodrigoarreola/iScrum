@@ -600,7 +600,7 @@ location="${catalina.home}/lib/catalina-ant.jar" />
 
         <mkdir dir="${test.out.dir}"/>
 
-       <junit printsummary="yes" fork="no" haltonfailure="yes">
+       <junit printsummary="yes" fork="false" haltonfailure="yes">
             <classpath>
                 <fileset dir="${lib.home}">
                     <include name="**/*.jar"/>
@@ -634,7 +634,7 @@ location="${catalina.home}/lib/catalina-ant.jar" />
     <target name="alltests"
           description="Crea y persiste algunos datos">
 
-        <java classname="edu.uag.iidis.scec.pruebas.AllTests" fork="true">
+        <java classname="edu.uag.iidis.scec.pruebas.AllTests" fork="false">
             <classpath>
                 <fileset dir="${lib.home}">
                     <include name="**/*.jar"/>
