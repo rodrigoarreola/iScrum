@@ -18,7 +18,7 @@ public class AllTests extends TestCase {
         TestSuite suite = new TestSuite();
 
         suite.addTest(RolDAOTest.suite());
-	suite.addTest(LoginDAOTest.suite());
+	    suite.addTest(LoginDAOTest.suite());
         suite.addTest(UsuarioDAOTest.suite());
 
         return suite;

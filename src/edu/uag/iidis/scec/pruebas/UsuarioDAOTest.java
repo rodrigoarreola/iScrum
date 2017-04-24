@@ -21,18 +21,18 @@ public class UsuarioDAOTest extends TestCase {
     private static RolDAO rolDAO = null;
 
     protected void setUp() throws Exception {
-        // se ejecuta al inicio de cada método de prueba
+        // se ejecuta al inicio de cada mï¿½todo de prueba
     }
 
     protected void tearDown() {
-        // se ejecuta al final de cada método de prueba
+        // se ejecuta al final de cada mï¿½todo de prueba
     }
 
     public void testCrearUsuarioInvalido() throws Exception {
         Usuario usuario = new Usuario(
                     new NombrePersona("Ing.",
                                       "Gonzalo",
-                                      "Osuna", "Millán", 
+                                      "Osuna", "Millï¿½n", 
                                       "", "gom"),
                     new Credencial("gosuna","123"));
 
@@ -50,7 +50,7 @@ public class UsuarioDAOTest extends TestCase {
         Usuario usuario = new Usuario(
                     new NombrePersona("Ing.",
                                       "Gonzalo",
-                                      "Osuna", "Millán", 
+                                      "Osuna", "Millï¿½n", 
                                       "", "gom"),
                     new Credencial("gosuna1","123"));
         try {
@@ -128,8 +128,8 @@ public class UsuarioDAOTest extends TestCase {
     public void testBuscarPorNombre() throws Exception {
         Usuario usuarios;
         try {
-            usuarios = dao.buscarPorNombreUsuario("Fernando");
-            assertTrue(usuarios.getCredencial().getNombreUsuario().equals("Fernando"));
+            usuarios = dao.buscarPorNombreUsuario("ravenclaw");
+            assertTrue(usuarios.getCredencial().getNombreUsuario().equals("ravenclaw"));
         } catch (Exception e) {
             throw e;
         } finally{
